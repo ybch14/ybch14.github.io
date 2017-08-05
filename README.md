@@ -17,3 +17,4 @@ Hope this can push me learning all the time.
    - [Faster R-CNN (Faster version of Fast R-CNN)](Object_detection/Faster_R-CNN.md)
    - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
    - [FPN (Feature Pyramid Network, to-be-continued)](Object_detection/FPN.md)
+   - [Selective Search](Object_detection/Selective_Search.md)
