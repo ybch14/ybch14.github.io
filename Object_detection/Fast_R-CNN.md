@@ -1,3 +1,6 @@
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 # Fast R-CNN
 
 R-CNN 的扩展，比 R-CNN 快 200+ 倍。
