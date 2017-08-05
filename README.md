@@ -12,8 +12,8 @@ Hope this can push me learning all the time.
 
 - Object detection
    - [R-CNN (Region-based CNN)](Object_detection/R-CNN.md)
-   - SPP (Spatial Pyramid Pooling)
-   - Fast R-CNN (Faster version of R-CNN)
-   - Faster R-CNN (Faster version of Fast R-CNN)
-   - Mask R-CNN (Add semanic segmentation task on Faster R-CNN)
-   - FPN (Feature Pyramid Network, to-be-continued)
+   - [SPP (Spatial Pyramid Pooling)](Object_detection/SPP.md)
+   - [Fast R-CNN (Faster version of R-CNN)](Object_detection/Fast_R-CNN.md)
+   - [Faster R-CNN (Faster version of Fast R-CNN)](Object_detection/Faster_R-CNN.md)
+   - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
+   - [FPN (Feature Pyramid Network, to-be-continued)](Object_detection/FPN.md)
