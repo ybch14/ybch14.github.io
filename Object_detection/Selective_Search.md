@@ -5,10 +5,19 @@
 ### 1. 区域初始化：获取超像素 
 
 - 用图的方法表示图片，每个像素对应图中的一个节点v，每一条连接节点的无向边e具有一个权重，衡量连接的两个节点之间的不相似程度（权重越大越不相似）。
-- 定义区域内间距：$\mathrm{Int}(C) =\max_{e \in MST(C, E)} \omega(e)$，每个区域对应的最小生成树（MST）中最大权重。
-- 定义区域间间距：$\mathrm{Dif}(C_1, C_2) = \min_{v_i\in C_1, v_j \in C_2, (v_i, v_j)\in E}\omega(v_i, v_j)$，在所有属于两个区域且有连接的点中权重最小的一对（无连接的两个点的边权重无穷大）。
-- 定义函数：$\mathrm{MInt}(C_1, C_2) = \min(Int(C_1) + \tau(C_1), Int(C_2) + \tau(C_2))$ ，$\tau$ 为阈值函数，用来控制两个区域间间距在多大程度上大于其区域内间距才能认为两个区域间有明显分割界限。
-- 定义断言函数：$\mathrm{D}(C_1, C_2) = \mathrm{true}\ \ \mathrm{if}\ \ \mathrm{Dif}(C_1, C_2) > \mathrm{MInt}(C_1, C_2)\ \ \mathrm{else}\ \ \mathrm{false}$ 。
+- 定义区域内间距：每个区域对应的最小生成树（MST）中最大权重。
+
+$$\mathrm{Int}(C) =\max_{e \in MST(C, E)} \omega(e)$$
+
+- 定义区域间间距：在所有属于两个区域且有连接的点中权重最小的一对（无连接的两个点的边权重无穷大）。
+
+$$\mathrm{Dif}(C_1, C_2) = \min_{v_i\in C_1, v_j \in C_2, (v_i, v_j)\in E}\omega(v_i, v_j)$$
+
+- 定义函数：$\mathrm{MInt}(C_1, C_2) = \min(\mathrm{Int}(C_1) + \tau(C_1), \mathrm{Int}(C_2) + \tau(C_2))$ ，$\tau$ 为阈值函数，用来控制两个区域间间距在多大程度上大于其区域内间距才能认为两个区域间有明显分割界限。
+- 定义断言函数：
+
+$$\mathrm{D}(C_1, C_2) = \begin{cases}\mathrm{true} & \mathrm{Dif}(C_1, C_2) > \mathrm{MInt}(C_1, C_2) \\ \mathrm{false} &\mathrm{else}\end{cases}$$
+
 - 分割算法：输入为n个节点、m条边的图G，输出为一系列区域C
   - 所有的边按照权重以非递减方式排序
   - 令初始分割集合S(0)为每个点都属于一个区域
