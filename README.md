@@ -1,4 +1,4 @@
-# The main page of Chen Yubo‘s technical blog.
+# The main page of Chen Yubo‘s technology blog.
 
 This blog contains some of the notes I've taken when reading papers, books or something else.
 
