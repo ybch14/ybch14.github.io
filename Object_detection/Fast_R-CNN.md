@@ -36,7 +36,7 @@ R-CNN 的扩展，比 R-CNN 快 200+ 倍。
 
   - $L(p, u; t^u, v) = L_{cls}(p, u) + \lambda[u\ge 1]L_{loc}(t^u, v)$，其中 $L_{cls}(p, u) = -\log p_u$，$[u \ge 1]$ 意为当 $u \ge 1$ 时取值为1，否则取值为0（即对背景不做 bounding box regression）。
   - $L_{loc}(t^u, v) = \sum_{i \in \{x, y, w, h\}}smooth_{L_1}(t_i^u - v_i)$
-  - $smooth_{L_1}(x) = \begin{cases}0.5x^2 & if\ \|x\|<1 \\ \|x\| - 0.5 & otherwise \end{cases}$
+  - $smooth_{L_1}(x) = \begin{cases}0.5x^2 & if\ \|x\|<1 \\\\ \|x\| - 0.5 & otherwise \end{cases}$
   - $L_1$ loss 可以减轻梯度爆炸的问题
 
 ### 3. 测试方法
