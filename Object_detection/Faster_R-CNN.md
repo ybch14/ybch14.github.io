@@ -19,7 +19,7 @@ Fast R-CNN 的扩展。R-CNN、SPPnet、Fast R-CNN 都是先用 Selective Search
 
   - 损失函数的表达式如下：
 
-    $L(\{p_i\}, \{t_i\}) = \frac{1}{N_{cls}}\sum_iL_{cls}(p_i, p_i^*) + \lambda\frac{1}{N_{reg}}\sum_ip_i^*L_{reg}(t_i, t_i^*)$ 
+    $$L(\{p_i\}, \{t_i\}) = \frac{1}{N_{cls}}\sum_iL_{cls}(p_i, p_i^*) + \lambda\frac{1}{N_{reg}}\sum_ip_i^*L_{reg}(t_i, t_i^*)$$ 
 
     i 是 anchor 在一个batch中的编号，$p_i$ 是第 i 个 anchor 为物体的预测概率，$p_i^*$ 是第 i 个 anchor 为物体的真实概率（正样本为1，负样本为0，即负样本不贡献回归损失）。$t_i$ 是预测输出的参数化的 box regression 向量（同 Fast R-CNN 的参数化方法），$t_i^*$ 是真实的参数化的 box regression 向量。$L_{cls}$ 是对数损失函数，$L_{reg}$ 是 smooth L1 损失函数。
 
