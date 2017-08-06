@@ -33,7 +33,7 @@ Faster R-CNN 的扩展，在其基础上增加了生成 segmentation mask 的功
 
   - ResNet：RoI --> 7 \* 7 \* 1024 --(res5)--> 7 \* 7 \* 2048 --(avg pooling)--> 2048 --(fc)-->cls, box
 
-    ​                                                                                            |
+    ​                                                                                           \|
 
     ​                                                                                             -----> 14 \* 14 \* 256 --> 14 * 14 * 80 --> mask
 
