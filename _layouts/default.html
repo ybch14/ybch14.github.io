@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+            }
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
@@ -43,29 +67,6 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            processEscapes: true
-            }
-        });
-    </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-        tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-        });
-    </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Queue(function() {
-            var all = MathJax.Hub.getAllJax(), i;
-            for(i=0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    </script>
-    <script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
   </body>
 </html>
