@@ -23,6 +23,6 @@
   - Fast R-CNN 是一种基于 RoI 的物体检测方法。想要在 Fast R-CNN 里应用 FPN ，需要把不同尺度的 RoI 分配到不同的金字塔层级上。
   - 分配策略如下：如果 RoI 的高度和宽度分别是 $w$ 和 $h$ ，那么这个 RoI 被分配到的金字塔层级为 $P_k$，
 
-  $$k = \lfloor k_0 + \log_2(\sqrt{wh}/224)$$
+  $$k = \lfloor k_0 + \log_2(\sqrt{wh}/224) \rfloor$$
 
-  - 
+  - 类似基于 ResNet 的 Faster R-CNN （见 ResNet）中使用的 $C_4$ 特征图，此处令 $k_0 = 4$。对所有层级上的所有 RoI 应用 head 网络（所有 RoI 共享 head 网络的权重）。经过 RoIPooling 之后提取的 7\*7 的特征输入到两个 1024 长的全连接层后输入到分类器和回归器中得到预测结果。
