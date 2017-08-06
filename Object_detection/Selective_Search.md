@@ -53,7 +53,5 @@ $$\mathrm{D}(C_1, C_2) = \begin{cases}\mathrm{true} & \mathrm{Dif}(C_1, C_2) > \
 
 
 ###### 参考文献： 
-
 ###### 1. J.Uijlings, K. van de Sande, T.Gevers, and A. Smeulders. Selective search for object recognition. IJCV, 2013  
-
 ###### 2. Pedro F. Felzenszwalb, Daniel P. Huttenlocher. Efficient Graph-Based Image Segmentation. IJCV, 59:167–181, 2004. 
