@@ -7,7 +7,7 @@
 <div id="diagram"></div>
 <div><textarea id="code" style="width: 100%;" rows="11">
 st=>start: Image (3 * 224 * 224)
-conv1=>inputoutput: k 11 * 11 * 96 s 4 * 4
+conv1=>inputoutput: k:(11 * 11 * 96) s:(4 * 4)
 e=>end: cls
 
 st->conv1->e
