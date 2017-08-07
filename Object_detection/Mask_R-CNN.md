@@ -106,4 +106,4 @@ FCN 保留空间位置信息，segmentation 结果更好。
 
 ###### 参考文献 
 
-1. K. He, G. Gkioxari, P. Dollar, R. Girshick. Mask R-CNN. 
+###### 1. K. He, G. Gkioxari, P. Dollar, R. Girshick. Mask R-CNN. 
