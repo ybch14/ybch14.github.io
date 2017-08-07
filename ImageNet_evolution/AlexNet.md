@@ -8,7 +8,7 @@
 
 <script>
 var diagram = flowchart.parse('st=>start: Start\ne=>end\nop1=>operation: My Operation\n');
-diagram.drawSVG('diagram');
+<!-- diagram.drawSVG('diagram'); -->
 diagram.drawSVG('diagram', {
                                 'x': 0,
                                 'y': 0,
