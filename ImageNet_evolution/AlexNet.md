@@ -19,5 +19,5 @@
                                 'st->op1->cond\n' +
                                 'cond(yes)->io->e\n' + // conditions can also be redirected like cond(yes, bottom) or cond(yes, right)
                                 'cond(no)->sub1(right)->op1');
-    diagram.drawSVG('diagram', {'line-width': 3, 'line-length': 50, 'text-margin': 10, 'font-size': 14, 'font-color': 'black', 'line-color': 'black', 'element-color': 'black', 'fill': 'white', 'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'scale': 1});
+    diagram.drawSVG('diagram');
 </script>
