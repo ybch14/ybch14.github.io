@@ -9,4 +9,7 @@
 <div class="mermaid">
 graph TD
 A[image<br />(3 \* 224 ]\* 224)] --> B[k: 11 \* 11 \* 96]
+B-->C
+C-->D
+D-->E
 </div>
