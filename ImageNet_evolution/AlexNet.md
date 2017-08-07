@@ -17,7 +17,7 @@ pool2=>inputoutput: Max Pooling [k: 3, s: 2]
 pool2_output=>operation: (256 * 13 *13)
 conv3=>inputoutput: Conv [k: 3, s: 1, p: 1, c: 384] + ReLU
 conv4=>inputoutput: Conv [k: 3, s: 1, p: 1, c: 384] + ReLU
-conv4=>inputoutput: Conv [k: 3, s: 1, p: 1, c: 256] + ReLU
+conv5=>inputoutput: Conv [k: 3, s: 1, p: 1, c: 256] + ReLU
 pool5=>inputoutput: Max Pooling [k: 3, s: 2]
 pool5_output=>operation: (256, 6, 6)
 fc6=>inputoutput: fc [o: 4096]
@@ -30,7 +30,7 @@ norm1->pool1->pool1_output
 pool1_output->conv2->norm2
 norm2->pool2->pool2_output
 pool2_output->conv3->conv4->conv5->pool5->pool5_output
-pool5_output->fc6->fc7->fc8->end
+pool5_output->fc6->fc7->fc8->e
 </textarea></div>
 <script>
     document.getElementById("code").style.display = "none";
