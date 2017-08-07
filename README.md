@@ -15,4 +15,4 @@ The blogs will be gradually updated. Hope this can push me learning all the time
    - [FPN (Feature Pyramid Network)](Object_detection/FPN.md)
    - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
 - ImageNet Evolution
-   - [AlexNet(The first neural network for ImageNet classification)](ImageNet_evolution/AlexNet.md)
+   - [AlexNet (The first neural network for ImageNet classification)](ImageNet_evolution/AlexNet.md)
