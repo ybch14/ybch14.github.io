@@ -24,3 +24,9 @@ cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e
 </textarea></div>
+<script>
+        var cd = document.getElementById("code");
+        var code = cd.value;
+        var diagram = flowchart.parse(code);
+        diagram.drawSVG('diagram');
+    </script>
