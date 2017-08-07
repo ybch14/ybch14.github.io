@@ -12,7 +12,7 @@
                                 'e=>end:>http://www.google.com\n' +
                                 'op1=>operation: My Operation\n' +
                                 'sub1=>subroutine: My Subroutine\n' +
-                                'cond=>condition: Yes or No?:>http://www.google.com' +
+                                'cond=>condition: Yes or No?:>http://www.google.com\n' +
                                 'io=>inputoutput|request: catch something...\n' +
                                 '' +
                                 'st->op1->cond\n' +
