@@ -4,7 +4,7 @@
 
 ### 1. 网络结构
 
-<div id="diagram"></div>
+<center><div id="diagram"></div></center>
 <div><textarea id="code" style="width: 100%;" rows="11">
 st=>start: Image (3 * 224 * 224)
 conv1=>inputoutput: Conv [k: 11, s: 4, c: 96] + ReLU
