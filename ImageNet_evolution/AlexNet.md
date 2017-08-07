@@ -8,6 +8,16 @@
 
 <div id="diagram">Diagram will be placed here</div>
 <script>
-    var diagram = flowchart.parse('st=>start: Start\ne=>end\nop1=>operation: My Operation\n');
+    var diagram = flowchart.parse('st=>start: Start:>http://www.google.com[blank]\n' +
+                                'e=>end:>http://www.google.com\n' +
+                                'op1=>operation: My Operation\n' +
+                                'sub1=>subroutine: My Subroutine\n' +
+                                'cond=>condition: Yes \n' +
+                                'or No?\n:>http://www.google.com' +
+                                'io=>inputoutput|request: catch something...\n' +
+                                '' +
+                                'st->op1->cond\n' +
+                                'cond(yes)->io->e\n' + // conditions can also be redirected like cond(yes, bottom) or cond(yes, right)
+                                'cond(no)->sub1(right)->op1');
     diagram.drawSVG('diagram', {'line-width': 3, 'line-length': 50, 'text-margin': 10, 'font-size': 14, 'font-color': 'black', 'line-color': 'black', 'element-color': 'black', 'fill': 'white', 'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'scale': 1});
 </script>
