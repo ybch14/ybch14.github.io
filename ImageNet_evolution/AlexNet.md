@@ -8,5 +8,5 @@
 
 <script>
 var diagram = flowchart.parse('st=>start: Start\ne=>end\nop1=>operation: My Operation\n');
-diagram.drawSVG('diagram', {'x': 0, 'y': 0, 'line-width': 3, 'line-length': 50, 'text-margin': 10, 'font-size': 14, 'font-color': 'black', 'line-color': 'black', 'element-color': 'black', 'fill': 'white', 'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'scale': 1});
+diagram.drawSVG('diagram', {'line-width': 3, 'line-length': 50, 'text-margin': 10, 'font-size': 14, 'font-color': 'black', 'line-color': 'black', 'element-color': 'black', 'fill': 'white', 'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'scale': 1});
 </script>
