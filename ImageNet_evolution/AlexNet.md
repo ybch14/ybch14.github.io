@@ -22,7 +22,7 @@ cond(no)->sub1(left)->op1
 c2(yes)->io->e
 c2(no)->op2->e -->
 st=>start: Image (3 * 224 * 224)
-conv1=>inputoutput: k: 11 * 11 * 96<br />s: 4 * 4
+conv1=>inputoutput: k 11 * 11 * 96<br />s 4 * 4
 e=>end: cls
 
 st->conv1->e
