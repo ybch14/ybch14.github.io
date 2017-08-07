@@ -4,6 +4,10 @@ This blog contains some of the notes I've taken when reading papers, books or so
 
 The blogs will be gradually updated. Hope this can push me learning all the time :-)
 
+
+
+[chart](chart_index.html)
+
 ## Context
 
 - Object detection
