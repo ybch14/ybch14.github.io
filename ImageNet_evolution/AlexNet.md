@@ -25,7 +25,7 @@ st=>start: Image (3 * 224 * 224)
 conv1=>inputoutput: k: 11 * 11 * 96<br />s: 4 * 4
 e=>end: cls
 
-st->conv1->end
+st->conv1->e
 </textarea></div>
 <script>
     document.getElementById("code").style.display = "none";
