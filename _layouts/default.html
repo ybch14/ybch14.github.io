@@ -51,13 +51,18 @@
     </section>
     <section class="main-content">
       {{ content }}
-      <aside top=33% height=80%>
+      <aside id="toc-aside"> 
+      <script type="text/javascript">
+        var windowheight = window.innerHeight;
+        var headheight = $(document.getElementsByClassName("page-header")).height;
+        document.getElementById("toc-aside").style.height = headheight - windowheight;
+      </script>
       <script type="text/javascript" src="../js/toc.js"></script>
       <div id="toc"></div>
       <script type="text/javascript">
         $(document).ready(function() {
         $('#toc').toc();
-      });
+        });
       </script>
       </aside>
       <footer class="site-footer">
