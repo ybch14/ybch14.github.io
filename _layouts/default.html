@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="../assets/main.scss">
   </head>
   <body>
       <script type="text/x-mathjax-config">
@@ -48,6 +49,15 @@
         <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
       {% endif %}
     </section>
+    <aside>
+      <script type="text/javascript" src="../js/toc.js"></script>
+      <div id="toc"></div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+        $('#toc').toc();
+      });
+      </script>
+    </aside>
     <section class="main-content">
       {{ content }}
       <footer class="site-footer">

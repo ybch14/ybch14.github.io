@@ -1,0 +1,27 @@
+// Import partials from the `minima` theme.
+@import "minima";
+
+@media screen and (min-width:1024px) {
+	.wrapper{
+		margin-right: 30%; // 文字右侧到页边30%
+	}
+
+	aside{
+		position:fixed;
+		left:75%;  // 侧边栏宽25%
+		top:0;
+		right:0;
+		height:100%;
+		overflow-y:scroll;
+        background-color:#eeeeee;
+		padding:2em 3em;
+		box-shadow:5px 0 5px rgba(0,0,0,.1) inset;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	aside{
+		overflow:hidden;
+		padding: 1em;
+	}
+}
