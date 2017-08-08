@@ -4,7 +4,7 @@
       noBackToTopLinks: false,
       minimumHeaders: 3,
       headers: 'h1, h2, h3, h4, h5',
-      listType: 'ul', // values: [ol|ul]
+      listType: 'dl', // values: [ol|ul]
       showEffect: 'show', // values: [show|slideDown|fadeIn|none]
       showSpeed: 'slow', // set to 0 to deactivate effect
       classes: { list: '',
@@ -67,17 +67,17 @@
         $(header).addClass('top-level-header').after(return_to_top);
       }
       if (this_level === level) // same level as before; same indenting
-        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+        html += "<dt class=\"" + settings.classes.item + "\">" + createLink(header);
       else if (this_level <= level){ // higher level than before; end parent ol
         for(var i = this_level; i < level; i++) {
-          html += "</li></"+settings.listType+">"
+          html += "</dt></"+settings.listType+">"
         }
-        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+        html += "<dt class=\"" + settings.classes.item + "\">" + createLink(header);
       }
       else if (this_level > level) { // lower level than before; expand the previous to contain a ol
         for(i = this_level; i > level; i--) {
           html += "<" + settings.listType + " class=\"" + settings.classes.list +"\">" +
-                  "<li class=\"" + settings.classes.item + "\">"
+                  "<dt class=\"" + settings.classes.item + "\">"
         }
         html += createLink(header);
       }
