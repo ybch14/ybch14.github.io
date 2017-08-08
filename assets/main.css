@@ -4,9 +4,9 @@
     }
     aside {
         position:fixed;
-        left:75%;
+        left:0%;
         top:0;
-        right:0;
+        right:20%;
         height:100%;
         overflow-y:scroll;
         background-color:#eeeeee;
