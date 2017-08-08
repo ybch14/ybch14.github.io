@@ -5,10 +5,10 @@
     aside {
         position:fixed;
         left:0%;
-        top:0;
+        top:0%;
         right:80%;
         height:100%;
-        overflow-y:hidden;
+        overflow-y:auto;
         background-color:#eeeeee;
         padding:2em 3em;
         box-shadow:5px 0 5px rgba(0,0,0,0.1) inset
