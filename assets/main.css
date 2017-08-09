@@ -32,7 +32,7 @@
 }
 
 .top-bar {
-    z-index: 100;
+    z-index: 1;
 }
 
 .top-bar ul {
@@ -80,6 +80,7 @@
 
 #not-top {
     margin-top: 52px;
+    z-index: 0;
 }
 
 .openbutton {
