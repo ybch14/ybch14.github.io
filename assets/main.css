@@ -18,7 +18,7 @@
     font-size: 18px;
     color: #818181;
     display: block;
-    transition: 0.3s
+    transition: 0.1s
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -30,7 +30,7 @@
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: .3s;
+    transition: .1s;
 }
 
 .main-content a:hover, .offcanvas a:focus {
