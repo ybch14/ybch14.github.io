@@ -2,7 +2,7 @@
 
  物体检测中生成候选框（region proposal）的方法之一。通过区域初始化得到超像素，之后通过贪婪算法两两组合超像素直至区域大小达到全图；根据组合得到的区域，在不同尺度上得到候选框。
 
-### 1. 区域初始化：获取超像素 
+### 区域初始化：获取超像素 
 
 - 用图的方法表示图片，每个像素对应图中的一个节点v，每一条连接节点的无向边e具有一个权重，衡量连接的两个节点之间的不相似程度（权重越大越不相似）。
 - 定义区域内间距：每个区域对应的最小生成树（MST）中最大权重。
@@ -29,7 +29,7 @@ $$\mathrm{D}(C_1, C_2) = \begin{cases}\mathrm{true} & \mathrm{Dif}(C_1, C_2) > \
   - Nearest Neighbor Graphs (NNG) : 先把图像中每个像素映射到特征空间形成图的节点，然后利用特征空间中的距离度量，选择最近邻的点作为邻居，权重为两个节点在特征空间里的距离。
 - NNG 方法能够更好的提取感知上的重要区域。
 
-### 2. 分层分组算法：
+### 分层分组算法：
 
 - 用区域初始化的方法得到 $R = \{r_1, \dots , r_n\}$ 
 - 构建相似集合S， 并初始化为空集
@@ -42,7 +42,7 @@ $$\mathrm{D}(C_1, C_2) = \begin{cases}\mathrm{true} & \mathrm{Dif}(C_1, C_2) > \
   - $R = R \cup r_t$ // 将不同尺度的区域都加入候选集合
 - 从 R 中的每个元素提取候选框
 
-### 3. 相似性准则 $s(r_i, r_j)$ ： 
+### 相似性准则 $s(r_i, r_j)$ ： 
 
 - 颜色 $s_{color}(r_i, r_j)$ ：对每个区域 $r_i$ 可以得到一个一维的颜色分布直方图 $C_i = \{c_i^1, c_i^2, \dots, c_i^n\}$ ，则$s_{color}(r_i, r_j) = \sum_{k = 1}^n \min(c_i^k, c_j^k)$ 。如果 i 和 j 合并为 t ，则合并区域的大小为$size(r_t) = size(r_i) +size(r_j)$， 直方图为 $C_t = \frac{size(r_i) \times C_i + size(r_j) \times C_j}{size(r_i) + size(r_j)}$ 。
 - 纹理 $s_{texture}(r_i, r_j)$ ：取8个方向，方差为1的高斯滤波器，10个空间的直方图 $T_i = \{t_i^1, \dots, t_i^n\}$ ，则 $s_{texture}(r_i, r_j) = \sum_{k = 1}^n \min(t_i^k, t_j^k)$，合并区域的大小和直方图与颜色特征的计算方法相同。
@@ -52,6 +52,7 @@ $$\mathrm{D}(C_1, C_2) = \begin{cases}\mathrm{true} & \mathrm{Dif}(C_1, C_2) > \
 
 
 
-###### 参考文献： 
-###### 1. J.Uijlings, K. van de Sande, T.Gevers, and A. Smeulders. Selective search for object recognition. IJCV, 2013  
-###### 2. Pedro F. Felzenszwalb, Daniel P. Huttenlocher. Efficient Graph-Based Image Segmentation. IJCV, 59:167–181, 2004. 
+### 参考文献： 
+
+1. J.Uijlings, K. van de Sande, T.Gevers, and A. Smeulders. Selective search for object recognition. IJCV, 2013 
+2. Pedro F. Felzenszwalb, Daniel P. Huttenlocher. Efficient Graph-Based Image Segmentation. IJCV, 59:167–181, 2004. 

@@ -2,7 +2,7 @@
 
 特征金字塔网络，目的是利用卷积网络中不同尺度的特征图，因为不同尺度的特征图包含不同的语义含义。网络的目的是为了构建带有高层语义含义的特征金字塔，集成不同尺度特征图中的语义信息，增强网络的学习效果。
 
-### 1. FPN
+### FPN
 
 - FPN 的输入为任意大小的图片，输出大小成比例的不同层级的特征图。
 - 构建特征图的过程与提取特征的 backbone 卷积网络独立。论文总采用的卷积网络是 ResNet。
@@ -13,7 +13,7 @@
   - 网络在自顶向下通路中的每一级都会有预测输出（分类标签/box  regression 输出）。由于分类器和回归器的参数都是共享的，所以自顶向下通路中每一层的特征图都应该具有相同的通道数。论文中取 256 个通道。在自顶向下通路中所有的层都不引入非线性激活函数。
   - 文章中提到，这篇文章的目的是提出一种带有横向连接的特征金字塔的结构。至于横向连接的具体形式不做深究。实际上采用一个 residual block 代替上文提到的 1x1 卷积层会有更好的结果，但是不属于这篇文章的讨论范围。从特征图的角度看，特征金字塔把强语义信息的特征图方法，并充分利用各层级的语义信息；从 RPN 的角度看，RPN 的输入为固定窗口大小，因此采用多尺度的 FPN 结构能够提高 RPN 对于物体尺度缩放的鲁棒性。
 
-### 2. FPN 的应用
+### FPN 的应用
 
 - FPN for RPN (Region Proposal Network)
   - RPN 是一个在卷积网络最后一层特征图上滑动的小网络，包含一个 3x3 的卷积层和两个 1x1 的卷积层，称为 *head*。​其分类标准和 bounding box 回归的都是建立在 anchor 的概念之上（见 Faster R-CNN）。
@@ -28,7 +28,7 @@
 
   - 类似基于 ResNet 的 Faster R-CNN （见 ResNet）中使用的 $C_4$ 特征图，此处令 $k_0 = 4$。对所有层级上的所有 RoI 应用 head 网络（所有 RoI 共享 head 网络的权重）。在基于 ResNet 的 Faster R-CNN 中，head 网络使用的是 ResNet 的 conv5 （一个9层的子网络），应用在 conv4 的特征图上。但是在 FPN 方法中 conv5 已经在构建特征金字塔的时候用过了，所以此处的 head 网络为两个 1024 长的全连接层：经过 RoIPooling 之后提取的 7*7 的特征输入到这两个全连接层中，其输出结果输入到分类器和回归器中得到预测结果。
 
-### 3. 实验结果
+### 实验结果
 
 - 对 RPN 使用 FPN （AR, average recall）
 
@@ -65,6 +65,6 @@
 
 
 
-###### 参考文献
+### 参考文献
 
-###### 1. T. -Y. Lin, P. Dollar, R. Girshick, K. He, B. Hariharan, and S. Belongie. Feature pyramid networks for object detection. In CVPR, 2017.
+1. T. -Y. Lin, P. Dollar, R. Girshick, K. He, B. Hariharan, and S. Belongie. Feature pyramid networks for object detection. In CVPR, 2017.

@@ -2,7 +2,7 @@
 
 Fast R-CNN 的扩展。R-CNN、SPPnet、Fast R-CNN 都是先用 Selective Search 选择候选框，然后送入卷积层/映射到卷积层输出的特征图。Faster R-CNN 提出 Region Proposal Network (RPN) 来提取候选框。首先用卷积网络（VGG / ZF）提取特征图，然后用 RPN 对特征图提取候选框，再把候选框和特征图送入 Fast R-CNN。
 
-### 1. Region Proposal Networks  
+### Region Proposal Networks  
 
 - 用小的全卷积网络（简称小网络）在卷积网络最后一层输出的特征图上滑动。小网络的输入是 $n \times n$ 的特征图窗口。每个窗口通过小网络后输出为一个低维度的向量（256 或 512， 激活函数为 ReLU）。输出的向量经过两个全连接得到 box regression 和 classification 输出。通常取 $n = 3$，因为最后一层特征图上的窗口映射到原始图片上会对应一个非常大的感受野。为了让所有的窗口共享全连接层的参数，小网络的全连接层用 $1 \times 1$ 的卷积层实现。
 
@@ -33,13 +33,13 @@ Fast R-CNN 的扩展。R-CNN、SPPnet、Fast R-CNN 都是先用 Selective Search
   - 对每张图片采样得到 256 个训练 anchor，其中正负样本比例接近 1：1。如果正样本不够128个，用负样本补齐。
   - 卷积网络初始化用在 ImageNet 上预训练得到的参数（VGG / ZF）。新层用零均值/方差0.01的高斯分布初始化。
 
-### 2. RPN 和 Fast R-CNN 共享特征图
+### RPN 和 Fast R-CNN 共享特征图
 
 - RPN 和 Fast R-CNN 分别训练会使得两个网络协同工作的效果不好。
 - 交换训练：第一步先用上述方法训练 RPN；第二步用刚才训练好的 RPN 生成的候选框训练 Fast R-CNN；第三步用上一步训练好的 Fast R-CNN 里面的卷积网络的参数来对 RPN 的训练进行初始化，只微调专属于 RPN 的层（在这一步两个网络共享卷积网络参数）；最后一步保持共享的卷积层参数不变，只微调专属于 Fast R-CNN 的层。经过上述步骤之后两个网络可以合并成一个统一的网络架构。
 
 
-### 3. 实现细节
+### 实现细节
 
 - 图片缩放到较短的边为600像素。
 - anchor 有 9 种，面积为 $128^2, 256^2, 512^2$ ，长宽比为 $1:1,\  1:2,\  2:1$ 。
@@ -47,7 +47,7 @@ Fast R-CNN 的扩展。R-CNN、SPPnet、Fast R-CNN 都是先用 Selective Search
 - RPN 生成的候选框可能有大量的重叠框。解决方法是 NMS（NMS中候选框的置信度为RPN输出的cls分数）。NMS 的 IoU 阈值为 0.7。经过筛选之后得到大概 2000 个候选框。
 
 
-### 4. 实验结果
+### 实验结果
 
 - VOC 2012 结果
 
@@ -84,6 +84,6 @@ RPN 有效提高系统运行速度。
 
 
 
-###### 参考文献 
+### 参考文献 
 
-###### 1. S. Ren, K. He, R. Girshick, and J. Sun. Faster R-CNN: Towards real-time object detection with region proposal networks. In NIPS, 2015
+1. S. Ren, K. He, R. Girshick, and J. Sun. Faster R-CNN: Towards real-time object detection with region proposal networks. In NIPS, 2015

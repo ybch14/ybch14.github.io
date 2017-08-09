@@ -2,7 +2,7 @@
 
 第一个用于 ImageNet 分类的深度网络。Top-5 错误率 15.3%，吊打第二的 26.2%。
 
-### 1. 网络结构
+### 网络结构
 
 <center><div id="diagram"></div></center>
 <div><textarea id="code" style="width: 100%;" rows="11">
