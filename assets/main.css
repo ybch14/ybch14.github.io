@@ -46,8 +46,7 @@
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none; 
-
+    text-decoration: none;
 }
 
 .top-bar .active {
@@ -68,8 +67,7 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding: 0px;
-    margin-top: 14px;
+    margin-top: 52px;
 }
 
 .openbutton {
