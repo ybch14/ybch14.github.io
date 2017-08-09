@@ -46,7 +46,7 @@
       <a href="#">Clients</a>
       <a href="#">Contact</a>
     </div>
-    <span onclick="openNav()">open</span>
+    
 
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
@@ -62,6 +62,7 @@
 
     <div id="main">
     <section class="main-content">
+      <span onclick="openNav()">open</span>
       {{ content }}
       <footer class="site-footer">
         {% if site.github.is_project_page %}
