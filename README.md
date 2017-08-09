@@ -3,6 +3,9 @@
 This blog contains some of the notes I've taken when reading papers, books or something else. Temporarily the notes only contains object detection and ImageNet Architecture evolution in Computer Vision topic.
 
 The blogs will be gradually updated. Hope this can push me learning all the time :-)
+
+## Note: The table of content hasn't been finished yet.
+
 ## Content
 
 - Object detection
