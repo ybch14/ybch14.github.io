@@ -62,20 +62,6 @@
     <div id="main">
     <section class="main-content">
       {{ content }}
-      <aside id="toc-aside"> 
-      <script type="text/javascript">
-        var windowheight = window.innerHeight;
-        var headheight = $(document.getElementsByClassName("page-header")).height();
-        document.getElementById("toc-aside").style.top = headheight / windowheight;
-      </script>
-      <script type="text/javascript" src="../js/toc.js"></script>
-      <div id="toc"></div>
-      <script type="text/javascript">
-        $(document).ready(function() {
-        $('#toc').toc();
-        });
-      </script>
-      </aside>
       <footer class="site-footer">
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
