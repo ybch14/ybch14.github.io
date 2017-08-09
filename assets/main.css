@@ -26,13 +26,14 @@
     color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.main-content a {
+    color: #818181;
+    display: block;
+    transition: .3s;
+}
+
+.main-content a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
