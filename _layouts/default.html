@@ -35,6 +35,7 @@
         });
     </script>
     <script type="text/javascript">
+      var is_open = false;
       function openNav() {
         document.getElementById("mySidenav").style.width = "20%";
         document.getElementById("main").style.marginLeft = "20%";
@@ -45,18 +46,17 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
       }
-      // function clickbutton() {
-      //   var is_open = false;
-      //   if (is_open == false)
-      //   {
-      //     openNav();
-      //     is_open = true;
-      //   }
-      //   else {
-      //     closeNav();
-      //     is_open=false;
-      //   }
-      // }
+      function clickbutton() {
+        if (is_open == false)
+        {
+          openNav();
+          is_open = true;
+        }
+        else {
+          closeNav();
+          is_open=false;
+        }
+      }
     </script>
     <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
