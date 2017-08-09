@@ -49,6 +49,7 @@
     
     <div id="main">
     <section class="page-header">
+      <span onclick="openNav()">&#9776;</span>
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
@@ -60,7 +61,7 @@
       {% endif %}
     </section>
     <section class="main-content">
-      <span onclick="openNav()">open</span>
+      
       {{ content }}
       <footer class="site-footer">
         {% if site.github.is_project_page %}
