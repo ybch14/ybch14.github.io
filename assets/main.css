@@ -69,6 +69,7 @@
 #main {
     transition: margin-left .5s;
     padding: 0px;
+    margin-top: 14px;
 }
 
 .openbutton {
