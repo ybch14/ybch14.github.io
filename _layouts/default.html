@@ -34,6 +34,18 @@
             }
         });
     </script>
+    <script type="text/javascript">
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "20%";
+      document.getElementById("main").style.marginLeft = "20%";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
     <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -48,24 +60,14 @@
     </div>
     <div class="top-bar">
     <ul>
+      <li><a href="javascript:openNav()">&#9776;</a></li>
       <li><a href="https://ybch14.github.io">Home</a></li>
       <li><a href="javascript:window.scroll(0, 0)">Top</a></li>
       <li><a href="https://github.com/ybch14">View GitHub</a></li>
     </ul>
     </div>
     <div id="main">
-    <script type="text/javascript">
-      function openNav() {
-      document.getElementById("mySidenav").style.width = "20%";
-      document.getElementById("main").style.marginLeft = "20%";
-      }
-
-      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-      function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
-          document.getElementById("main").style.marginLeft = "0";
-      }
-    </script>
+    
     
     <section class="page-header">
       <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
