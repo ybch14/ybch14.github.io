@@ -53,11 +53,7 @@
 
 .page-header {
     background-color: #333;
-    background-image: none;
-}
-
-.top-bar .active {
-    background-color: #4CAF50;
+    background-image: linear-gradient(90deg, #333, #666)
 }
 
 .main-content a {
