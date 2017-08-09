@@ -26,19 +26,22 @@
     color: #f1f1f1;
 }
 
-.page-header ul {
+.top-bar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-.page-header li {
+.top-bar li {
     float: left;
 }
 
-.page-header li a {
+.top-bar li a {
     display: block;
     color: #ffffff;
     text-align: center;
@@ -47,7 +50,7 @@
 
 }
 
-.page-header .active {
+.top-bar .active {
     background-color: #4CAF50;
 }
 

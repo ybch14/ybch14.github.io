@@ -58,15 +58,18 @@
           document.getElementById("mySidenav").style.width = "0";
           document.getElementById("main").style.marginLeft = "0";
       }
-    </script>
+</script>
+<div class="top-bar">
+<ul>
+  <li>Home</li>
+  <li>News</li>
+  <li>Contact</li>
+  <li>About</li>
+</ul>
+</div>
     <section class="page-header">
       <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
-      <ul>
-        <li>Home</li>
-        <li>News</li>
-        <li>Contact</li>
-        <li>About</li>
-      </ul>
+      
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
