@@ -31,10 +31,6 @@
     opacity: 1;
 }
 
-.top-bar {
-    z-index: 1;
-}
-
 .top-bar ul {
     list-style-type: none;
     margin: 0;
@@ -44,6 +40,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .top-bar li {
