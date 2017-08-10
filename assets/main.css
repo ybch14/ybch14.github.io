@@ -55,7 +55,11 @@
     background: #151515 url("bkg.png") 0 0;
 }
 
-.page-header h1 h2 {
+.page-header h1 {
+    color: #b5e853;
+}
+
+.page-header h2 {
     color: #b5e853;
 }
 
