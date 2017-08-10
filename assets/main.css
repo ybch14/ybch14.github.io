@@ -24,7 +24,7 @@
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+    color: #b5e853;
 }
 
 .top-bar ul {
@@ -49,6 +49,10 @@
     text-align: center;
     padding: 14px 16px; 
     text-decoration: none;
+}
+
+.top-bar li a:hover, .offcanvas a:focus {
+    color: #b5e853;
 }
 
 .page-header {
