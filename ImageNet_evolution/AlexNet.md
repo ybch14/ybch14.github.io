@@ -41,6 +41,6 @@ st->conv1->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->e
     var cd = document.getElementById("flow-chart-code");
     var code = cd.value;
     var diagram = flowchart.parse(code);
-    diagram.drawSVG('diagram');
+    diagram.drawSVG('diagram', {'text-align': 'center'});
     document.getElementById("diagram").style.fontFamily = inherit;
 </script>
