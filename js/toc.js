@@ -1,7 +1,7 @@
 (function($){
   $.fn.toc = function(options) {
     var defaults = {
-      noBackToTopLinks: false,
+      noBackToTopLinks: true,
       minimumHeaders: 3,
       title: '',
       headers: 'h1, h2, h3, h4, h5',
