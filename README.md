@@ -18,3 +18,10 @@ The blogs will be gradually updated. Hope this can push me learning all the time
    - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
 - ImageNet Evolution
    - [AlexNet (The first neural network for ImageNet classification)](ImageNet_evolution/AlexNet.md)
+
+## TODO
+
+- add FCN 
+- add deeplab
+- add dilated convolution
+- add conditional random field
