@@ -40,5 +40,5 @@ pool5_output->fc6->fc7->fc8->e
     var code = cd.value;
     var diagram = flowchart.parse(code);
     diagram.drawSVG('diagram');
-    document.getElementById("mySidenav").style.display = "block";
+    document.getElementById("diagram").style.fontFamily = inherit;
 </script>
