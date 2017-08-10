@@ -47,7 +47,7 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
 <script>mermaid.initialize({startOnLoad:true});</script>
 <center><div class="mermaid">
     graph TD;
-    image["Image"]--image_blob["3 * 224 * 224"];
-    conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"]--conv1_blob["96 * 54 * 54"];
-    image-->conv1;
+    image["Image"] --- image_blob["3 * 224 * 224"];
+    conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"] --- conv1_blob["96 * 54 * 54"];
+    image --> conv1;
 </div></center>
