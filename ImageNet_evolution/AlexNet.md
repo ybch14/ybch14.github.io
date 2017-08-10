@@ -43,7 +43,7 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
     diagram.drawSVG('diagram', {'text-align': 'center'});
 </script> -->
 
-<script src="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 <div class="mermaid">
     graph TD;
