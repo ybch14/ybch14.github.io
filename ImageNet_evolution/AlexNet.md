@@ -8,7 +8,7 @@
 <div>
 <textarea id="flow-chart-code">
 st=>start: Image
-3 * 224 * 224
+st_blob=>operation: 3 * 224 * 224
 conv1=>inputoutput: Conv [k = 11, s = 4, c = 96] + ReLU + LRN
 96 * 54 * 54
 pool1=>inputoutput: Max Pooling [k = 3, s = 2]
@@ -34,6 +34,7 @@ fc8=>inputoutput: fc [o: 1000]
 e=>end: prediction output
 
 st->conv1->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->e
+st->st_blob
 </textarea>
 </div>
 <script>
@@ -42,5 +43,4 @@ st->conv1->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->e
     var code = cd.value;
     var diagram = flowchart.parse(code);
     diagram.drawSVG('diagram', {'text-align': 'center'});
-    document.getElementById("diagram").style.fontFamily = inherit;
 </script>
