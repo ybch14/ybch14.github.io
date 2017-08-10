@@ -74,11 +74,6 @@
     <div id="not-top">
       <script type="text/javascript" src="../js/toc.js"></script>
       <div id="mySidenav" class="sidenav"></div>
-      <script type="text/javascript">
-        $(document).ready(function() {
-          $('#mySidenav').toc();
-        });
-      </script>
       <div id="main">
         <section class="page-header">
           <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
@@ -105,6 +100,11 @@
           </footer>
         </section>
       </div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#mySidenav').toc();
+        });
+      </script>
   </div>
     {% if site.google_analytics %}
       <script type="text/javascript">
