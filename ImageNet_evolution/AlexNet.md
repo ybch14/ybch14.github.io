@@ -59,15 +59,17 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
     fc6["fc [o = 4096]"];
     fc7["fc [o = 4096]"];
     fc8["fc [o = 1000]"];
+    pred["ImageNet classification result"];
     image -->|"3 * 224 * 224"| conv1;
-    conv1 --> pool1;
-    pool1 --> conv2;
-    conv2 --> pool2;
-    pool2 --> conv3;
-    conv3 --> conv4;
-    conv4 --> conv5;
-    conv5 --> pool5;
-    pool5 --> fc6;
-    fc6 --> fc7;
-    fc7 --> fc8;
+    conv1 -->|"96 * 54 * 54"| pool1;
+    pool1 -->|"96 * 27 * 27"| conv2;
+    conv2 -->|"256 * 27 * 27"| pool2;
+    pool2 -->|"256 * 13 * 13"| conv3;
+    conv3 -->|"384 * 13 * 13"| conv4;
+    conv4 -->|"384 * 13 * 13"| conv5;
+    conv5 -->|"256 * 13 * 13"| pool5;
+    pool5 -->|"256 * 6 * 6"| fc6;
+    fc6 -->|"4096"| fc7;
+    fc7 -->|"4096"| fc8;
+    fc8 -->|"1000"| pred;
 </div></center>
