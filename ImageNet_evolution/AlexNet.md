@@ -49,5 +49,15 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
     graph TD;
     image["Image"] --- image_blob["3 * 224 * 224"];
     conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"] --- conv1_blob["96 * 54 * 54"];
-    image --> conv1;
+    pool1["Max Pooling [k = 3, s = 2]"] --- pool1_blob["96 * 27 * 27"];
+    conv2["Conv [k = 5, s = 1, p = 2, c = 256] + ReLU + LRN"] --- conv2_blob["256 * 27 * 27"];
+    pool2["Max Pooling [k = 3, s = 2]"] --- pool2_blob["256 * 13 * 13"];
+    conv3["Conv [k = 3, s = 1, p = 1, c = 384] + ReLU"] --- conv3_blob["384 * 13 * 13"];
+    conv4["Conv [k = 3, s = 1, p = 1, c = 384] + ReLU"] --- conv4_blob["384 * 13 * 13"];
+    conv5["Conv [k = 3, s = 1, p = 1, c = 256] + ReLU"] --- conv5_blob["256 * 13 * 13"];
+    pool5["Max Pooling [k = 3, s = 2]"] --- pool5_blob["256 * 6 * 6"];
+    fc6["fc [o = 4096]"] --- fc6_blob["4096"];
+    fc7["fc [o = 4096]"] --- fc7_blob["4096"];
+    fc8["fc [o = 1000]"] --- fc6_blob["1000"];
+    image --> conv1 --> pool1 --> conv2 --> pool2 --> conv3 --> conv4 --> conv5 --> pool5 --> fc6 --> fc7 --> fc8;
 </div></center>
