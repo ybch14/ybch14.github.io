@@ -25,3 +25,4 @@ The blogs will be gradually updated. Hope this can push me learning all the time
 - add deeplab
 - add dilated convolution
 - add conditional random field
+- add deconvolution
