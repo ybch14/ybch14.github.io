@@ -35,6 +35,8 @@ pool5_output->fc6->fc7->fc8->e
 </textarea>
 </div>
 <script>
+    document.getElementById("flow-chart-code").style.display = "none";
+    document.getElementById("mySidenav").style.display = "block";
     var cd = document.getElementById("flow-chart-code");
     var code = cd.value;
     var diagram = flowchart.parse(code);
