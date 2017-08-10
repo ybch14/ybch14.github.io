@@ -5,7 +5,8 @@
 ### 网络结构
 
 <center><div id="diagram"></div></center>
-<div id="flow-chart-code" style="display: none;">
+<div>
+<textarea id="flow-chart-code">
 st=>start: Image (3 * 224 * 224)
 conv1=>inputoutput: Conv [k: 11, s: 4, c: 96] + ReLU
 norm1=>inputoutput: LRN
@@ -31,6 +32,7 @@ pool1_output->conv2->norm2
 norm2->pool2->pool2_output
 pool2_output->conv3->conv4->conv5->pool5->pool5_output
 pool5_output->fc6->fc7->fc8->e
+</textarea>
 </div>
 <script>
     var cd = document.getElementById("flow-chart-code");
