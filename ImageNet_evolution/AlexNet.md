@@ -47,7 +47,7 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
 <script>mermaid.initialize({startOnLoad:true});</script>
 <center><div class="mermaid">
     graph TD;
-    image["Image"] --- image_blob["3 * 224 * 224"];
+    image["Image"];
     conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"];
     pool1["Max Pooling [k = 3, s = 2]"];
     conv2["Conv [k = 5, s = 1, p = 2, c = 256] + ReLU + LRN"];
