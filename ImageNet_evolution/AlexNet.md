@@ -4,7 +4,7 @@
 
 ### 网络结构
 
-<center><div id="diagram"></div></center>
+<!-- <center><div id="diagram"></div></center>
 <div>
 <textarea id="flow-chart-code">
 st=>start: Image 3 * 224 * 224
@@ -33,7 +33,6 @@ fc8=>inputoutput: fc [o: 1000]
 e=>end: prediction output
 
 st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->e
-conv1(no)->conv1_blob
 </textarea>
 </div>
 <script>
@@ -42,4 +41,14 @@ conv1(no)->conv1_blob
     var code = cd.value;
     var diagram = flowchart.parse(code);
     diagram.drawSVG('diagram', {'text-align': 'center'});
-</script>
+</script> -->
+
+<script src="https://cdn.rawgit.com/knsv/mermaid/#version#/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+<div class="mermaid">
+    graph TD;
+    A-->B;
+    A-->C;
+    C-->D;
+    B-->D;
+</div>
