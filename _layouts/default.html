@@ -72,13 +72,13 @@
     </ul>
     </div>
     <div id="not-top">
-      <div id="mySidenav" class="sidenav">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </div>
-
+      <script type="text/javascript" src="toc.js"></script>
+      <div id="mySidenav" class="sidenav"></div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#mySidenav').toc();
+        });
+      </script>
       <div id="main">
         <section class="page-header">
           <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
