@@ -59,7 +59,7 @@ st->conv1(yes)->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->
     fc6["fc [o = 4096]"];
     fc7["fc [o = 4096]"];
     fc8["fc [o = 1000]"];
-    image --> conv1;
+    image -->|"3 * 224 * 224"| conv1;
     conv1 --> pool1;
     pool1 --> conv2;
     conv2 --> pool2;
