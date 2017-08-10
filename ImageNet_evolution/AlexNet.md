@@ -33,6 +33,7 @@ fc8=>inputoutput: fc [o: 1000]
 e=>end: prediction output
 
 st->conv1->pool1->conv2->pool2->conv3->conv4->conv5->pool5->fc6->fc7->fc8->e
+conv1->conv1_blob
 </textarea>
 </div>
 <script>
