@@ -19,12 +19,15 @@
     font-size: 18px;
     color: #ffffff;
     display: block;
-    transition: 0.1s
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
     color: #b5e853;
+    -webkit-animation: Glow 0.1s ease infinite alternate;
+    animation: Glow 0.1s ease infinite alternate;
 }
 
 .top-bar ul {
@@ -76,14 +79,11 @@
     text-decoration: none;
     color: #818181;
     display: block;
-    -webkit-transition: all 0.1s ease;
-    transition: all 0.1s ease;
+    transition: 0.1s;
 }
 
 .main-content a:hover, .offcanvas a:focus {
     color: #b5e853;
-    -webkit-animation: Glow 0.1s ease infinite alternate;
-    animation: Glow 0.1s ease infinite alternate;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
