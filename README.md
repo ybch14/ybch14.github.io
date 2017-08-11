@@ -31,3 +31,7 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
 - add FCIS
 - complete alexnet
 - add 3D deep learing methods (pointnet etc.)
+
+## Note
+ 
+This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by [`mermaid`](https://github.com/knsv/mermaid). Great thanks to the author!
