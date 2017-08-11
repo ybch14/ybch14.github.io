@@ -125,32 +125,20 @@ h1, h2, h3, h4, h5, h6 {
 @-webkit-keyframes Glow {
     from {
         text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853,
-                     0 0 80px #b5e853,
-                     0 0 100px #b5e853,
-                     0 0 150px #b5e853;
+                     0 0 70px #b5e853;
     }
     to {
-        text-shadow: 0 0 20px #b5e853,
-                     0 0 35px #b5e853,
-                     0 0 40px #b5e853,
-                     0 0 50px #b5e853,
-                     0 0 75px #b5e853;
+        text-shadow: 0 0 40px #b5e853,
+                     0 0 70px #b5e853;
     }
 }
 @keyframes Glow {
     from {
         text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853,
-                     0 0 80px #b5e853,
-                     0 0 100px #b5e853,
-                     0 0 150px #b5e853;
+                     0 0 70px #b5e853;
     }
     to {
-        text-shadow: 0 0 20px #b5e853,
-                     0 0 35px #b5e853,
-                     0 0 40px #b5e853,
-                     0 0 50px #b5e853,
-                     0 0 75px #b5e853;
+        text-shadow: 0 0 40px #b5e853,
+                     0 0 70px #b5e853;
     }
 }
