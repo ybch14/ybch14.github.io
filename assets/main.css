@@ -76,11 +76,14 @@
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: .1s;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 .main-content a:hover, .offcanvas a:focus {
     color: #b5e853;
+    -webkit-animation: Glow 0.1s ease infinite alternate;
+    animation: Glow 0.1s ease infinite alternate;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -124,21 +127,17 @@ h1, h2, h3, h4, h5, h6 {
 
 @-webkit-keyframes Glow {
     from {
-        text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853;
+        text-shadow: 0 0 40px #b5e853;
     }
     to {
-        text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853;
+        text-shadow: 0 0 40px #b5e853;
     }
 }
 @keyframes Glow {
     from {
-        text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853;
+        text-shadow: 0 0 40px #b5e853;
     }
     to {
-        text-shadow: 0 0 40px #b5e853,
-                     0 0 70px #b5e853;
+        text-shadow: 0 0 40px #b5e853;
     }
 }
