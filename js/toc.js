@@ -19,7 +19,7 @@
 
     function createLink (header) {
       var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-      return "<a href='#" + fixedEncodeURIComponent(header.id) + "' onclick=\"javascript:window.scroll(0, 55)\">" + innerText + "</a>";
+      return "<a href='#" + fixedEncodeURIComponent(header.id) + "' onclick=\"javascript:window.scrollBy(0, -55)\">" + innerText + "</a>";
     }
 
     var headers = $(settings.headers).filter(function() {
