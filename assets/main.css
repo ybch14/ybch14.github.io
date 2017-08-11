@@ -50,14 +50,14 @@
     text-align: center;
     padding: 14px 16px; 
     text-decoration: none;
-    -webkit-transition: all 1.5s ease;
-    transition: all 1.5s ease;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 .top-bar li a:hover, .offcanvas a:focus {
     color: #b5e853;
-    -webkit-animation: Glow 1.5s ease infinite alternate;
-    animation: Glow 1.5s ease infinite alternate;
+    -webkit-animation: Glow 0.1s ease infinite alternate;
+    animation: Glow 0.1s ease infinite alternate;
 }
 
 .page-header {
