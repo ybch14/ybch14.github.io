@@ -1,10 +1,12 @@
-# The main page of Chen Yubo‘s technology blog.
+# The main page of Chen Yubo's technology blog.
 
 This blog contains some of the notes I've taken when reading papers, books or something else. Temporarily the notes only contains object detection and ImageNet Architecture evolution in Computer Vision topic.
 
 The blogs will be gradually updated. Hope this can push me learning all the time :-)
 
-## Note: The table of content hasn't been finished yet.
+## About me
+
+I'm a student at Department of Electronic Engineering, Tsinghua University, and I'm going to graduate in 2018. Also, I'm a research intern at Owlii Inc. in 2017 summer vacation. Currently I'm new at computer vision and deep learning, and I'm learning as more as I can. 
 
 ## Content
 
@@ -28,3 +30,4 @@ The blogs will be gradually updated. Hope this can push me learning all the time
 - add deconvolution
 - add FCIS
 - complete alexnet
+- add 3D deep learing methods (pointnet etc.)
