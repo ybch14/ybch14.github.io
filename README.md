@@ -6,7 +6,7 @@ The blogs will be gradually updated. Hope this can push me learning all the time
 
 ## About me
 
-I'm a student at Department of Electronic Engineering, Tsinghua University, and I'm going to graduate in 2018. Also, I'm a research intern at Owlii Inc. in 2017 summer vacation. Currently I'm new at computer vision and deep learning, and I'm learning as more as I can. 
+I'm a student at Department of Electronic Engineering, Tsinghua University, and I'm going to graduate in 2018. Also, I'm a research intern at Owlii Inc. in 2017 summer vacation. Currently I'm new at computer vision and deep learning, and I'm learning as much as I can. 
 
 ## Content
 
