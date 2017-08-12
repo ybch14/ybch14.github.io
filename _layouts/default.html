@@ -103,6 +103,10 @@
           $('#mySidenav').toc();
         });
       </script>
+      <script type="text/javascript">
+        $('body').scrollspy({target: '.target', offset: "55px"});
+        $('.target').click(function(){$('body').animate({scrollTop: $($(this).attr('href')).offset().top - 55}, 500) return});
+      </script>
   </div>
     {% if site.google_analytics %}
       <script type="text/javascript">
