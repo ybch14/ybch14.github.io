@@ -143,3 +143,10 @@ h1, h2, h3, h4, h5, h6 {
         text-shadow: 0 0 40px #b5e853;
     }
 }
+
+:target:before {
+    content: "";
+    display: block;
+    height: 55px;
+    margin: -55px 0 0;
+}
