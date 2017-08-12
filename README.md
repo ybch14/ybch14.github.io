@@ -23,6 +23,7 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
 
 ## TODO
 
+- fix scrolling bug !!!
 - add FCN 
 - add deeplab
 - add dilated convolution
