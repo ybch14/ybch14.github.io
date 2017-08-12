@@ -93,8 +93,8 @@
 
 #not-top {
     top: 55px;
-    width: -webkit-fill-avaliable;
-    position: fixed;
+    width: 100%;
+    position: absolute;
     z-index: 0;
 }
 
