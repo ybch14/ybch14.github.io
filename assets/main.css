@@ -6,6 +6,8 @@
     top: 0;
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
+    text-overflow: ellipsis;
+    white-space: nowrap;
     padding-top: 30px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     background-color: #333;
