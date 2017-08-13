@@ -1,8 +1,8 @@
-# The main page of Chen Yubo's technology blog.
+# Hello
 
-This blog contains some of the notes I've taken when reading papers, books or something else. Temporarily the notes only contains object detection and ImageNet Architecture evolution in Computer Vision topic.
+Welcome to Chen Yubo's blog. This blog contains some of the notes I've taken when reading papers, books or something else. Temporarily the notes only contains object detection and ImageNet Architecture evolution in Computer Vision topic. The articles will be gradually updated. 
 
-The blogs will be gradually updated. Hope this can push me learning all the time :-)
+Hope this can push me learning all the time :-)
 
 ## About me
 
