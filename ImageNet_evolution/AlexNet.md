@@ -29,7 +29,7 @@ function ClickShowButton()
 </script>
 <center><button class="button show" id="show-button" onclick="ClickShowButton()">
 <span id="button-left">
-<i class="demo-icon icon-sitemap"></i> Show Network
+<i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
 <span id="button-right">
 <i class="demo-icon icon-down-open"></i>
