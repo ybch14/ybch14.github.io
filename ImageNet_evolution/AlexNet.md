@@ -4,7 +4,6 @@
 
 ### 网络结构
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
 <script type="text/javascript">
 mermaid.initialize({startOnLoad:true});

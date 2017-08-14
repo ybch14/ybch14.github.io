@@ -93,6 +93,11 @@
     color: #b5e853;
 }
 
+.main-content {
+    font-size: 25px;
+    max-width: 80rem;
+}
+
 .main-content a {
     text-decoration: none;
     color: #818181;
