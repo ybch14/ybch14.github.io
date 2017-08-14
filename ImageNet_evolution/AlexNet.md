@@ -6,7 +6,35 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
-<center><div class="mermaid">
+<script type="text/javascript">
+var is_show = false;
+function ClickShowButton()
+{
+    if (is_show == false)
+    {
+        document.getElementbyId('mermaid-graph').style.display = 'block';
+        document.getElementbyId('show-button').innerHTML = "Hide Network";
+        is_show = true;
+    }
+    else
+    {
+        document.getElementById('mermaid-graph').style.display = 'none';
+        document.getElementById('show-button').innerHTML = 'Show Network';
+        is_show = false;
+    }
+}
+</script>
+<center>
+<center><button class="button show" id="show-button">
+<span id="button-left">
+<i class="demo-icon icon-sitemap"></i> Show Network
+</span>
+<span id="button-right">
+<i class="demo-icon icon-down-open"></i>
+</span></button></center>
+</center>
+<center>
+<div class="mermaid" id="mermaid-graph">
     graph TD;
     image["Image"];
     conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"];
@@ -33,4 +61,7 @@
     fc6 -->|"4096"| fc7;
     fc7 -->|"4096"| fc8;
     fc8 -->|"1000"| pred;
-</div></center>
+</div>
+</center>
+
+### ReLU

@@ -196,3 +196,34 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.button {
+	display: inline-block;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	background: #333;
+	border: none;
+	transition: .2s;
+	padding: 0em;
+	color: #b5e853;
+}
+
+#button-left {
+  float: left;
+  padding: 15px;
+}
+
+#button-right {
+  display: block;
+  float: right;
+  padding: 15px 15px 15px 18px;
+  background: #151515;
+  text-align: center;
+}
+
+.button:hover, .offcanvas .button:focus {
+	color:#b5e853;
+	-webkit-animation: Glow 0.1s ease infinite alternate;
+    animation: Glow 0.1s ease infinite alternate;
+}
