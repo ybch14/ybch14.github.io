@@ -5,7 +5,15 @@
 ### 网络结构
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaidAPI.js"></script>
-<script type="text/javascript">mermaidAPI.initialize({startOnLoad:false});</script>
+<script type="text/javascript">
+mermaidAPI.initialize({startOnLoad:false});
+var element = document.querySelector('#mermaid-graph');
+var insertSvg = function(svgCode, bindFunctions) {
+    element.innerHTML = svgCode;
+};
+var graphDefinition = document.getElementById('graph-definition').innerHTML;
+var graph = mermaidAPI.render('mermaid-graph', graphDefinition, insertSvg);
+</script>
 <script type="text/javascript">
 var is_show = false;
 function ClickShowButton()
@@ -13,12 +21,6 @@ function ClickShowButton()
     if (is_show == false)
     {
         document.getElementById('mermaid-graph').style.display = "block";
-        var element = document.getElementById('mermaid-graph');
-        var insertSvg = function(svgCode, bindFunctions) {
-            element.innerHTML = svgCode;
-        };
-        var graphDefinition = element.innerHTML;
-        var graph = mermaidAPI.render('mermaid-graph', graphDefinition, insertSvg);
         document.getElementById('show-button').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = true;
     }
@@ -30,7 +32,6 @@ function ClickShowButton()
     }
 }
 </script>
-<center>
 <center><button class="button show" id="show-button" onclick="ClickShowButton()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Show Network
@@ -38,9 +39,8 @@ function ClickShowButton()
 <span id="button-right">
 <i class="demo-icon icon-down-open"></i>
 </span></button></center>
-</center>
 <center>
-<div class="mermaid" id="mermaid-graph" style="display: none">
+<div class="mermaid" id="graph-definition" style="display: none">
     graph TD;
     image["Image"];
     conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"];
