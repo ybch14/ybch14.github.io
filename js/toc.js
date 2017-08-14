@@ -67,16 +67,16 @@
       if (this_level === level) // same level as before; same indenting
         html += "<dt class=\"" + "\">" + createLink(header);
       else if (this_level <= level){ // higher level than before; end parent ol
-        for(var i = this_level; i < level; i++) {
+        //for(var i = this_level; i < level; i++) {
           html += "</dt></"+settings.listType+">"
-        }
+        //}
         html += "<dt class=\"" + "\">" + createLink(header);
       }
       else if (this_level > level) { // lower level than before; expand the previous to contain a ol
-        for(i = this_level; i > level; i--) {
+        //for(i = this_level; i > level; i--) {
           html += "<" + settings.listType + " class=\"" +"\">" +
                   "<dt class=\"" + "\">"
-        }
+        //}
         html += createLink(header);
       }
       level = this_level; // update for the next one
