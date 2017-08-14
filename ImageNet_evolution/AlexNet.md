@@ -4,8 +4,8 @@
 
 ### 网络结构
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
-<script type="text/javascript">mermaid.initialize({startOnLoad:true});</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaidAPI.js"></script>
+<script type="text/javascript">mermaidAPI.initialize({startOnLoad:false});</script>
 <script type="text/javascript">
 var is_show = false;
 function ClickShowButton()
@@ -13,7 +13,12 @@ function ClickShowButton()
     if (is_show == false)
     {
         document.getElementById('mermaid-graph').style.display = "block";
-        <!-- mermaidAPI.render('mermaid-graph', document.getElementById('mermaid-graph').innerHTML); -->
+        var element = document.getElementById('mermaid-graph');
+        var insertSvg = function(svgCode, bindFunctions) {
+            element.innerHTML = svgCode;
+        };
+        var graphDefinition = element.innerHTML;
+        var graph = mermaidAPI.render('mermaid-graph', graphDefinition, insertSvg);
         document.getElementById('show-button').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = true;
     }
