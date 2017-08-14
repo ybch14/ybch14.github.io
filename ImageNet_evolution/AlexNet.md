@@ -12,8 +12,8 @@ function ClickShowButton()
 {
     if (is_show == false)
     {
-        document.getElementbyId('mermaid-graph').style.display = 'block';
-        document.getElementbyId('show-button').innerHTML = "Hide Network";
+        document.getElementById('mermaid-graph').style.display = 'block';
+        document.getElementById('show-button').innerHTML = "Hide Network";
         is_show = true;
     }
     else
