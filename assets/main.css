@@ -37,6 +37,16 @@
     background-color: #151515;
 }
 
+.sidenav dl {
+    margin-top: 0px;
+}
+
+.sidenav a p {
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .top-bar ul {
     list-style-type: none;
     margin: 0;
