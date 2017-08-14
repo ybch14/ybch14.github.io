@@ -157,6 +157,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?69690424');
+    src: url('../font/fontello.eot?69690424#iefix') format('embedded-opentype'),
+         url('../font/fontello.woff?69690424') format('woff'),
+         url('../font/fontello.ttf?69690424') format('truetype'),
+         url('../font/fontello.svg?69690424#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :target:before {
     content: "";
     display: block;
