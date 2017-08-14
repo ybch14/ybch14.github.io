@@ -23,6 +23,8 @@
     display: block;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -68,6 +70,8 @@
     text-decoration: none;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .top-bar li a:hover, .offcanvas a:focus {
