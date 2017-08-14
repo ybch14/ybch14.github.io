@@ -28,8 +28,13 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
     color: #b5e853;
+    background-color: #151515;
     -webkit-animation: Glow 0.1s ease infinite alternate;
     animation: Glow 0.1s ease infinite alternate;
+}
+
+.sidenav a:hover:not(.active) {
+    background-color: #151515;
 }
 
 .top-bar ul {
@@ -62,6 +67,7 @@
 
 .top-bar li a:hover, .offcanvas a:focus {
     color: #b5e853;
+    background-color: #151515;
     -webkit-animation: Glow 0.1s ease infinite alternate;
     animation: Glow 0.1s ease infinite alternate;
 }
