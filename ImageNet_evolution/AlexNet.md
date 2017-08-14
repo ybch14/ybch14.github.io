@@ -25,7 +25,7 @@ function ClickShowButton()
 }
 </script>
 <center>
-<center><button class="button show" id="show-button">
+<center><button class="button show" id="show-button" onclick="ClickShowButton()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Show Network
 </span>
@@ -34,7 +34,7 @@ function ClickShowButton()
 </span></button></center>
 </center>
 <center>
-<div class="mermaid" id="mermaid-graph">
+<div class="mermaid" id="mermaid-graph" style="display: none">
     graph TD;
     image["Image"];
     conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"];
