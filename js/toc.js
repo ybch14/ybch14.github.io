@@ -17,9 +17,9 @@
       });
     }
 
-    function createLink (header) {
+    function createLink (header, level) {
       var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'><p>" + innerText + "</p></a>";
+      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'><p style='margin-left: " + (level-1)*20 + "px>" + innerText + "</p></a>";
     }
 
     var headers = $(settings.headers).filter(function() {
@@ -65,19 +65,19 @@
         $(header).addClass('top-level-header').after(return_to_top);
       }
       if (this_level === level) // same level as before; same indenting
-        html += "<dt class=\"" + "\">" + createLink(header);
+        html += "<dt class=\"" + "\">" + createLink(header, this_level);
       else if (this_level <= level){ // higher level than before; end parent ol
         //for(var i = this_level; i < level; i++) {
           html += "</dt></"+settings.listType+">"
         //}
-        html += "<dt class=\"" + "\">" + createLink(header);
+        html += "<dt class=\"" + "\">" + createLink(header, this_level);
       }
       else if (this_level > level) { // lower level than before; expand the previous to contain a ol
         //for(i = this_level; i > level; i--) {
           html += "<" + settings.listType + " class=\"" +"\">" +
                   "<dt class=\"" + "\">"
         //}
-        html += createLink(header);
+        html += createLink(header, this_level);
       }
       level = this_level; // update for the next one
     });
