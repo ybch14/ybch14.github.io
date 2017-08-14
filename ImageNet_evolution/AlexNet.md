@@ -5,20 +5,21 @@
 ### 网络结构
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
+<script type="text/javascript">mermaid.initialize({startOnLoad:false});</script>
 <script type="text/javascript">
 var is_show = false;
 function ClickShowButton()
 {
     if (is_show == false)
     {
-        document.getElementById('mermaid-graph').style.display = 'block';
-        mermaid.initialize({startOnLoad:false});
+        document.getElementById('mermaid-graph').style.display = "block";
+        mermaidAPI.render('id1', document.getElementById('mermaid-graph').innerHTML);
         document.getElementById('show-button').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = true;
     }
     else
     {
-        document.getElementById('mermaid-graph').style.display = 'none';
+        document.getElementById('mermaid-graph').style.display = "none";
         document.getElementById('show-button').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Show Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = false;
     }
