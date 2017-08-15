@@ -57,7 +57,6 @@
         }
         
       }
-
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
@@ -74,6 +73,28 @@
           is_open=false;
         }
       }
+
+      $(window).resize(function () {
+        if (is_open)
+        {
+          var width_em = $(window.width) / parseFloat($("body").css("font-size"));
+          if (width_em >= 72)
+          {
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "300px";
+          }
+          else if (width_em >= 42)
+          {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+          }
+          else 
+          {
+            document.getElementById("mySidenav").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "200px";
+          }
+        }
+      });
     </script>
     <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
