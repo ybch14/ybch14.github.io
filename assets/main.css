@@ -211,7 +211,8 @@ h1, h2, h3, h4, h5, h6 {
 	border: none;
 	transition: .2s;
 	padding: 0em;
-	color: #b5e853;
+    color: #b5e853;
+    box-shadow: 0 7px #999;
 }
 
 #button-left {
@@ -231,4 +232,12 @@ h1, h2, h3, h4, h5, h6 {
 	color:#b5e853;
 	-webkit-animation: Glow 0.1s ease infinite alternate;
     animation: Glow 0.1s ease infinite alternate;
+}
+
+.button:active {
+    color: #b5e853;
+    -webkit-animation: Glow 0.1s ease infinite alternate;
+    animation: Glow 0.1s ease infinite alternate;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
 }
