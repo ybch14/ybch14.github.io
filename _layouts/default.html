@@ -74,7 +74,7 @@
         }
       }
       
-      function switchsidenavwidth() {
+      $(window).resize( function () {
         if (is_open)
         {
           var width_em = $(window).width / parseFloat($("body").css("font-size"));
@@ -94,10 +94,7 @@
             document.getElementById("main").style.marginLeft = "200px";
           }
         }
-      }
-
-      window.onresize = switchsidenavwidth;
-      switchsidenavwidth(); 
+      });
 
     </script>
     <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
