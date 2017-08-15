@@ -58,6 +58,10 @@
     float: left;
 }
 
+.top-bar li:last-child {
+    float: right;
+}
+
 .top-bar li a {
     display: block;
     color: #ffffff;
@@ -101,12 +105,14 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
+    background-color: white;
 }
 
 #not-top {
     width: 100%;
     position: absolute;
     z-index: 0;
+    background-color: #333;
 }
 
 body {
