@@ -687,3 +687,27 @@ a {
   color: $blockquote-text-color;
 
 }
+
+.sidenav {
+  @include large {
+    width: 300px;
+  }
+  @include medium {
+    width: 250px;
+  }
+  @include small {
+    width: 200px;
+  }
+}
+
+.sidenav a {
+  @include large {
+    font-size: 18px;
+  } 
+  @include medium {
+    font-size: 15px;
+  }
+  @include small {
+    font-size: 12px;
+  }
+}
