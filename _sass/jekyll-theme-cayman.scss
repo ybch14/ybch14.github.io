@@ -766,18 +766,6 @@ a {
   }
 }
 
-.top-bar li:last-child {
-  @include large {
-    margin-top: -2px;
-  }
-  @include medium {
-    margin-top: -3px;
-  }
-  @include small {
-    margin-top: -6px;
-  }
-}
-
 #mySidenav-on {
   @include large {
     width: 300px;
@@ -808,4 +796,24 @@ a {
 
 #main-off {
   margin-left: 0px;
+}
+
+.top-bar li:last-child a {
+  
+  @include large {
+    font-size: 36px;
+    margin-top: -6px;
+    margin-right: -6px;
+  }
+  @include medium {
+    font-size: 30px;
+    margin-top: -5px;
+    margin-right: -5px;
+  }
+  @include small {
+    font-size: 24px;
+    margin-top: -4px;
+    margin-right: -4px;
+  }
+  
 }
