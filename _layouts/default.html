@@ -39,12 +39,12 @@
     <script type="text/javascript">
       var is_open = false;
       function openNav() {
-        document.getElementById("mySidenav-off").id = "mySidenav-on";
+        // document.getElementById("mySidenav-off").id = "mySidenav-on";
         document.getElementById("main-off").id = "main-on";
       }
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
-        document.getElementById("mySidenav-on").id = "mySidenav-off";
+        // document.getElementById("mySidenav-on").id = "mySidenav-off";
         document.getElementById("main-on").id = "main-off";
       }
       function clickbutton() {
@@ -72,7 +72,7 @@
     </div>
     <div id="not-top">
       <script type="text/javascript" src="../js/toc.js"></script>
-      <div id="mySidenav-off" class="sidenav"></div>
+      <div id="mySidenav-on" class="sidenav"></div>
       <div id="main-off" class="main">
         <section class="page-header">
           <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
@@ -101,7 +101,7 @@
       </div>
       <script type="text/javascript">
         $(document).ready(function() {
-          $('#mySidenav-off').toc();
+          $('#mySidenav-on').toc();
         });
       </script>
   </div>
