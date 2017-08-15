@@ -9,7 +9,6 @@
     text-overflow: ellipsis;
     white-space: pre-line;
     padding-top: 30px; /* Place content 60px from the top */
-    padding-right: 20px;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     background-color: #333;
     z-index: -1;
@@ -17,7 +16,7 @@
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 30px 8px 32px;
     text-decoration: none;
     color: #ffffff;
     display: block;
