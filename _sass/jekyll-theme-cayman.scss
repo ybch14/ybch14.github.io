@@ -688,6 +688,18 @@ a {
 
 }
 
+.sidenav {
+  @include large {
+    margin-top: 55px;
+  }
+  @include medium {
+    margin-top: 47px;
+  }
+  @include small {
+    margin-top: 38px;
+  }
+}
+
 .sidenav a {
   @include large {
     font-size: 18px;
@@ -736,5 +748,20 @@ a {
   }
   @include small {
     top: 38px;
+  }
+}
+
+:target:before {
+  @include large {
+    height: 55px;
+    margin: -55px 0 0;
+  }
+  @include medium {
+    height: 47px;
+    margin: -47px 0 0;
+  }
+  @include small {
+    height: 38px;
+    margin: -38px 0 0;
   }
 }
