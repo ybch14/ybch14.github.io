@@ -9,6 +9,7 @@
     text-overflow: ellipsis;
     white-space: pre-line;
     padding-top: 30px; /* Place content 60px from the top */
+    padding-right: 20px;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     background-color: #333;
     z-index: -1;
