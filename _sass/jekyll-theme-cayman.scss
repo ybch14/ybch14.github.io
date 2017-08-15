@@ -777,3 +777,35 @@ a {
     margin-top: -6px;
   }
 }
+
+#mySidenav-on {
+  @include large {
+    width: 300px;
+  }
+  @include medium {
+    width: 250px;
+  }
+  @include small {
+    width: 200px;
+  }
+}
+
+#mySidenav-off {
+  width: 0px;
+}
+
+#main-on {
+  @include large {
+    margin-left: 300px;
+  }
+  @include medium {
+    margin-left: 250px;
+  }
+  @include small {
+    margin-left: 200px;
+  }
+}
+
+#main-off {
+  margin-left: 0px;
+}
