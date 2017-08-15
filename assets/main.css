@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .button {
 	display: inline-block;
-	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+	font-family: 'Lucida Console', Monaco, monospace;
 	-webkit-font-smoothing: antialiased;
 	position: relative;
 	background: #333;
