@@ -699,3 +699,42 @@ a {
     font-size: 12px;
   }
 }
+
+.top-bar li a {
+  @include large {
+    font-size: 18px;
+    padding: 14px 16px;
+  }
+  @include medium {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  @include small {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+
+.top-bar ul {
+  @include large{
+    height: 55px;
+  }
+  @include medium {
+    height: 47px;
+  }
+  @include small {
+    height: 38px;
+  }
+}
+
+#not-top {
+  @include large {
+    top: 55px;
+  }
+  @include medium {
+    top: 47px;
+  }
+  @include small {
+    top: 38px;
+  }
+}
