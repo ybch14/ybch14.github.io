@@ -39,14 +39,13 @@
     <script type="text/javascript">
       var is_open = false;
       function openNav() {
-        document.getElementById("mySidenav").style.width = "300px";
-        document.getElementById("main").style.marginLeft = "300px";
+        document.getElementById("mySidenav-off").id = "mySidenav-on";
+        document.getElementById("main-off").id = "main-on";
       }
-
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("mySidenav-on").id = "mySidenav-off";
+        document.getElementById("main-on").id = "main-off";
       }
       function clickbutton() {
         if (is_open == false)
@@ -68,13 +67,13 @@
         <li><a href="https://ybch14.github.io"><i class="demo-icon icon-home">&#xe800;</i>  Home</a></li>
         <li><a href="javascript:window.scroll(0, 0)"><i class="demo-icon icon-up-big">&#xe803;</i> Top</a></li>
         <li><a href="../Other/update.html"><i class="demo-icon icon-plus">&#xe802;</i> Updates</a></li>
-        <li style="float: right; margin-top: -2px"><a href="https://github.com/ybch14"><img src="../GitHub-Mark/GitHub-Mark-Light-32px.png" /></a></li>
+        <li><a href="https://github.com/ybch14"><i class="demo-icon icon-github-circled">&#xf09b;</i></a></li>
       </ul>
     </div>
     <div id="not-top">
       <script type="text/javascript" src="../js/toc.js"></script>
-      <div id="mySidenav" class="sidenav"></div>
-      <div id="main">
+      <div id="mySidenav-off" class="sidenav"></div>
+      <div id="main-off" class="main">
         <section class="page-header">
           <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->
           
