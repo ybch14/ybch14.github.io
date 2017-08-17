@@ -40,6 +40,20 @@
       var is_open = false;
       function openNav() {
         // document.getElementById("mySidenav-off").id = "mySidenav-on";
+        if ($('#mySideNav').css('display') != 'block')
+        {
+          var article_left = $('.main-article').position().left;
+          $('#myMainSideNav').css({
+            'position': 'relative',
+            'display': 'block', 
+            'float': 'none',
+            'left': article_left + 'px',
+            'top': 'auto'
+          });
+          $('.main-article').css({
+            'display': 'block'
+          });
+        }
         document.getElementById("main-off").id = "main-on";
         console.log($('#myMainSideNav').width())
       }
@@ -47,6 +61,21 @@
       function closeNav() {
         // document.getElementById("mySidenav-on").id = "mySidenav-off";
         document.getElementById("main-on").id = "main-off";
+        var content_width = $('#myMainSideNav'.width()) + 80;
+        var article_left = $('.main-article').position().left;
+        if (article_left >= content_width)
+        {
+          $content.css({
+            'position': 'relative',
+            'display': 'inline-block',
+            'float': 'left',
+            'top': 'auto',
+            'left': (article_left - content_width) + 'px'
+          });
+          $('main-article').css({
+            'display': 'inline-block'
+          });
+        }
         console.log($('#myMainSideNav').width())
       }
       function clickbutton() {
