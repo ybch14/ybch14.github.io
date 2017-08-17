@@ -106,67 +106,78 @@
         $(document).ready(function() {
           $('#myMainSideNav').toc();
         });
+        // var $content = $('#myMainSideNav');
+        // var content_offset_top = $('#myMainSideNav').offset().top;
+        // var article_left = $('.main-article').position().left - 30;
+        // var content_width = $('#myMainSideNav').width();
+        // if (article_left < content_width)
+        // {
+        //   $content.css({
+        //     'position': 'relative',
+        //     'display': 'inline-block', 
+        //     'left': article_left + 'px',
+        //     'top': 'auto'
+        //   });
+        // }
+        // else {
+        //   $content.css({
+        //       'position': 'relative',
+        //       'display': 'inline-block', 
+        //       'left': (article_left - content_width) + 'px',
+        //       'top': 'auto'
+        //     });
+        // }
       </script>
       <script>
         jQuery(function($) {
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
             var content_offset_top = $('#myMainSideNav').offset().top;
-            var article_left = $('.main-article').position().left;
+            var article_left = $('.main-article').position().left - 30;
             var content_width = $('#myMainSideNav').width();
             if (article_left < content_width)
             {
               $content.css({
                 'position': 'relative',
                 'display': 'inline-block', 
-                'left': (article_left) + 'px',
+                'left': article_left + 'px',
                 'top': 'auto'
-              });
-              $('.main-article').css({
-                'display': 'inline-block'
               });
             }
             else {
               $content.css({
-                'position': 'relative',
-                'display': 'inline-block', 
-                'left': (article_left - content_width) + 'px',
-                'top': 'auto'
-              });
-              $('main-article').css({
-                'display': 'inline-block'
-              });
+                  'position': 'relative',
+                  'display': 'inline-block', 
+                  'left': (article_left - content_width) + 'px',
+                  'top': 'auto'
+                });
             }
             function fixContent() {
-                $content = $('#myMainSideNav');
-                if (article_left >= content_width) {
+              $content = $('#myMainSideNav');
+              if (article_left >= content_width) {
                 if ($(window).scrollTop() > content_offset_top) {
                   var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                   $content.css({
                     'position': 'fixed',
                     'display': 'inline-block',
+                    'float': 'left',
                     'top': top_bar_height + 'px',
                     'left': (article_left - content_width) + 'px'
-                  });
-                  $('.main-article').css({
-                    'display':'inline-block'
                   });
                 }
                 else
                   $content.css({
                     'position': 'relative',
                     'display': 'inline-block',
+                    'float': 'left',
                     'top': 'auto',
                     'left': (article_left - content_width) + 'px'
                   });
-                  $('.main-article').css({
-                    'display': 'inline-block'
-                  });
               }
-              $(window).scroll(fixContent);
-              fixContent();
             }
-          }
+            $(window).scroll(fixContent);
+            fixContent();
+        }
         $(window).resize(RecalculateWhenResize);
         RecalculateWhenResize();
       });
