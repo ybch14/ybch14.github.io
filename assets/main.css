@@ -224,7 +224,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-article-content{
-    float: left;
     display: inline-block;
     top: auto;
     position: relative;
