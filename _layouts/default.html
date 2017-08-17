@@ -39,44 +39,11 @@
     <script type="text/javascript">
       var is_open = false;
       function openNav() {
-        // document.getElementById("mySidenav-off").id = "mySidenav-on";
-        if ($('#mySideNav').css('display') != 'block')
-        {
-          var article_left = $('.main-article').position().left;
-          $('#myMainSideNav').css({
-            'position': 'relative',
-            'display': 'block', 
-            'float': 'none',
-            'left': article_left + 'px',
-            'top': 'auto'
-          });
-          $('.main-article').css({
-            'display': 'block'
-          });
-        }
-        document.getElementById("main-off").id = "main-on";
-        console.log($('#myMainSideNav').width())
+        document.getElementById("mySidenav").style.display = "block";
       }
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
-        // document.getElementById("mySidenav-on").id = "mySidenav-off";
-        document.getElementById("main-on").id = "main-off";
-        var content_width = $('#myMainSideNav').width() + 80;
-        var article_left = $('.main-article').position().left;
-        if (article_left >= content_width)
-        {
-          $('#myMainSideNav').css({
-            'position': 'relative',
-            'display': 'inline-block',
-            'float': 'left',
-            'top': 'auto',
-            'left': (article_left - content_width) + 'px'
-          });
-          $('main-article').css({
-            'display': 'inline-block'
-          });
-        }
-        console.log($('#myMainSideNav').width())
+        document.getElementById("mySidenav").style.display = "none";
       }
       function clickbutton() {
         if (is_open == false)

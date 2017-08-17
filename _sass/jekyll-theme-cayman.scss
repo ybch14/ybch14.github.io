@@ -778,18 +778,6 @@ a {
   }
 }
 
-#main-on {
-  @include large {
-    margin-left: 300px;
-  }
-  @include medium {
-    margin-left: 250px;
-  }
-  @include small {
-    margin-left: 200px;
-  }
-}
-
 #main-off {
   margin-left: 0px;
 }
