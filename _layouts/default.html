@@ -112,12 +112,12 @@
           function fixContent() {
             var $content = $('#myMainSideNav');
             if ($(window).scrollTop() > content_offset_top)
-              content.css({
+              $content.css({
                 'position': 'fixed',
                 'top': '10px'
               });
             else
-              content.css({
+              $content.css({
                 'position': 'relative',
                 'top': 'auto'
               });
