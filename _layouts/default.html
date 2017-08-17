@@ -106,27 +106,27 @@
         $(document).ready(function() {
           $('#myMainSideNav').toc();
         });
-        var $content = $('#myMainSideNav');
-        var content_offset_top = $('#myMainSideNav').offset().top;
-        var article_left = $('.main-article').position().left - 30;
-        var content_width = $('#myMainSideNav').width();
-        if (article_left < content_width)
-        {
-          $content.css({
-            'position': 'relative',
-            'display': 'inline-block', 
-            'left': article_left + 'px',
-            'top': 'auto'
-          });
-        }
-        else {
-          $content.css({
-              'position': 'relative',
-              'display': 'inline-block', 
-              'left': (article_left - content_width) + 'px',
-              'top': 'auto'
-            });
-        }
+        // var $content = $('#myMainSideNav');
+        // var content_offset_top = $('#myMainSideNav').offset().top;
+        // var article_left = $('.main-article').position().left - 30;
+        // var content_width = $('#myMainSideNav').width();
+        // if (article_left < content_width)
+        // {
+        //   $content.css({
+        //     'position': 'relative',
+        //     'display': 'inline-block', 
+        //     'left': article_left + 'px',
+        //     'top': 'auto'
+        //   });
+        // }
+        // else {
+        //   $content.css({
+        //       'position': 'relative',
+        //       'display': 'inline-block', 
+        //       'left': (article_left - content_width) + 'px',
+        //       'top': 'auto'
+        //     });
+        // }
       </script>
       <script>
         jQuery(function($) {
