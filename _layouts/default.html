@@ -111,7 +111,6 @@
         jQuery(function($) {
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
-            var content_offset_top = $('#myMainSideNav').offset().top;
             var article_left = $('.main-article').position().left - 80;
             var content_width = $('#myMainSideNav').width();
             if (article_left < content_width)
@@ -139,22 +138,29 @@
 
               function fixContent() {
                 $content = $('#myMainSideNav');
-                  if ($(window).scrollTop() > content_offset_top) {
-                    var top_bar_height = $('.top-bar ul')[0].offsetHeight;
-                    $content.css({
-                      'position': 'fixed',
-                      'display': 'inline-block',
-                      'top': top_bar_height + 'px',
-                      'left': (article_left - content_width) + 'px'
-                    });
-                  }
-                  else
-                    $content.css({
-                      'position': 'relative',
-                      'display': 'inline-block',
-                      'top': 'auto',
-                      'left': (article_left - content_width) + 'px'
-                    });
+                var content_offset_top = $('#myMainSideNav').offset().top;
+                if ($(window).scrollTop() > content_offset_top) {
+                  var top_bar_height = $('.top-bar ul')[0].offsetHeight;
+                  $content.css({
+                    'position': 'fixed',
+                    'display': 'inline-block',
+                    'top': top_bar_height + 'px',
+                    'left': (article_left - content_width) + 'px'
+                  });
+                  $('.main-article').css({
+                    'display':'inline-block'
+                  });
+                }
+                else
+                  $content.css({
+                    'position': 'relative',
+                    'display': 'inline-block',
+                    'top': 'auto',
+                    'left': (article_left - content_width) + 'px'
+                  });
+                  $('.main-article').css({
+                    'display': 'inline-block'
+                  });
               }
             $(window).scroll(fixContent);
             fixContent();
