@@ -109,13 +109,15 @@
 .main {
     transition: margin-left .5s;
     background-color: white;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 #not-top {
     width: 100%;
     position: absolute;
     z-index: 0;
-    background-color: #333;
+    background-color: #000;
 }
 
 body {

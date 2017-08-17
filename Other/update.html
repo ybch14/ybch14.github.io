@@ -43,10 +43,16 @@
       var is_open = false;
       function openNav() {
         document.getElementById("mySidenav-off").id = "mySidenav-on";
+        $('.main').css({
+          'opacity': 0.4
+        });
       }
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
         document.getElementById("mySidenav-on").id = "mySidenav-off";
+        $('.main').css({
+          'opacity': 1
+        });
       }
       function clickbutton() {
         if (is_open == false)
