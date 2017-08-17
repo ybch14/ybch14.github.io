@@ -90,7 +90,7 @@
 
         <section class="main-content">
           <div class="main-article-content" id="myMainSideNav"></div>
-          <div class="main-article">
+          <div class="main-article" style="display: table-cell; float: left">
           {{ content }}
           <footer class="site-footer">
             {% if site.github.is_project_page %}
@@ -111,26 +111,20 @@
           function RecalculateWhenResize() {
             var content_offset_top = $('#myMainSideNav').offset().top;
             var content_offset_left = $('.main-article').position().left + $('.main-article').width();
-            var $content = $('#myMainSideNav');
-              $content.css({
-                'position': 'relative',
-                'float': 'right'
-              })
             function fixContent() {
               if ($(window).scrollTop() > content_offset_top) {
                 var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                 $content.css({
-                  'position': 'fixed',
-                  'top': top_bar_height + 'px',
-                  'left': content_offset_left + 'px'
+                  'position': 'absolute',
+                  'display': 'table-cell',
+                  'top': top_bar_height + 'px'
                 });
               }
               else
                 $content.css({
+                  'display': 'table-cell',
                   'position': 'relative',
                   'top': 'auto',
-                  'left': '0',
-                  'float': 'right'
                 });
             }
             $(window).scroll(fixContent);
