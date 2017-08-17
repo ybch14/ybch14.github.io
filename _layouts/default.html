@@ -111,11 +111,13 @@
         jQuery(function($) {
           function fixContent() {
             var $content = $('#myMainSideNav');
-            if ($(window).scrollTop() > content_offset_top)
+            if ($(window).scrollTop() > content_offset_top) {
+              var top_bar_height = $('.top-bar ul')[0].offsetHeight;
               $content.css({
                 'position': 'fixed',
-                'top': '10px'
+                'top': top_bar_height + 'px'
               });
+            }
             else
               $content.css({
                 'position': 'relative',
