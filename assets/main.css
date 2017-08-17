@@ -225,10 +225,5 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-article-content{
     float: left;
-    width: 20%;
-}
-
-.main-article {
-    float: right;
-    width: 80%;
+    display: table-cell;
 }
