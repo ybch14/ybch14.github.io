@@ -129,19 +129,19 @@
         // }
       </script>
       <script>
+        var content_width = $('#myMainSideNav').width() + 80;
+        var content_offset_top = $('#myMainSideNav').position().top;
         jQuery(function($) {
-          var content_width = $('#myMainSideNav').width();
-          var content_offset_top = $('#myMainSideNav').position().top;
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
-            var article_left = $('.main-article').position().left - 80;
+            var article_left = $('.main-article').position().left;
             if (article_left < content_width)
             {
               $content.css({
                 'position': 'relative',
                 'display': 'block', 
                 'float': 'none',
-                'left': (article_left + 80) + 'px',
+                'left': article_left + 'px',
                 'top': 'auto'
               });
               $('.main-article').css({
