@@ -228,17 +228,50 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     top: auto;
     position: relative;
+    margin-top: 2em;
     max-width: 50%;
+    box-shadow: -5px 0px 0px 0px #333;
 }
 
 .main-article-content p , dt {
-	-webkit-margin-before: 0px;
-	-webkit-margin-end: 0px;
-	-webkit-margin-after: 0px;
-	line-height: 0.5;
-
+	padding: 0;
+	margin-top: 1rem;
+	margin-bottom:0rem;
+	font-size: 1rem;
 }
 
 .main-article {
 	display: inline-block;
+}
+
+.main-article-content h3 {
+	margin-top: 0;
+	margin-bottom: 0rem;
+	margin-left: 20px;
+	font-weight: normal;
+	color : #159957;
+}
+
+.main-article-content a {
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height:0.6;
+}
+
+.main-article-content a p {
+	margin-top: 0rem;
+}
+
+.main-article-content dl{
+	margin-left: 20px;
+	margin-bottom: 0.5rem;
+}
+
+.main-article-content a:hover, .offcanvas a:focus {
+    color: #b5e853;
 }
