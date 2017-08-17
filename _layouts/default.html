@@ -136,10 +136,10 @@
               $('main-article').css({
                 'display': 'inline-block'
               });
-
-              function fixContent() {
+            }
+            function fixContent() {
                 $content = $('#myMainSideNav');
-                
+                if (article_left >= content_width) {
                 if ($(window).scrollTop() > content_offset_top) {
                   var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                   $content.css({
@@ -163,10 +163,10 @@
                     'display': 'inline-block'
                   });
               }
-            $(window).scroll(fixContent);
-            fixContent();
+              $(window).scroll(fixContent);
+              fixContent();
+            }
           }
-        }
         $(window).resize(RecalculateWhenResize);
         RecalculateWhenResize();
       });
