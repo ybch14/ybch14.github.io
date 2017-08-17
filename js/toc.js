@@ -89,6 +89,5 @@
       });
     }
     render[settings.showEffect]();
-    console.log($(this).width());
   };
 })(jQuery);
