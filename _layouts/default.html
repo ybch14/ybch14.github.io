@@ -106,10 +106,13 @@
         $(document).ready(function() {
           $('#myMainSideNav').toc();
         });
+        console.log($('myMainSideNav').width());
         var $content = $('#myMainSideNav');
+        console.log('hhh1')
         var content_offset_top = $('#myMainSideNav').offset().top;
         var article_left = $('.main-article').position().left;
         var content_width = $('#myMainSideNav').width();
+        console.log('hhh2');
         if (article_left < content_width)
         {
           $content.css({
