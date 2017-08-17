@@ -223,8 +223,8 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(2px);
 }
 
-.main-article-content{
+/* .main-article-content{
     float: right;
     display: table-cell;
     transition: 0s;
-}
+} */
