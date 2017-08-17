@@ -110,13 +110,18 @@
         jQuery(function($) {
           function RecalculateWhenResize() {
             var content_offset_top = $('#myMainSideNav').offset().top;
+            var content_offset_left = $('.main-article').position().left + $('.main-article').width();
             function fixContent() {
               var $content = $('#myMainSideNav');
+              $content.css({
+                'position': 'absolute',
+                'left': content_offset_left + 'px'
+              })
               if ($(window).scrollTop() > content_offset_top) {
                 var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                 $content.css({
                   'position': 'fixed',
-                  'top': top_bar_height + 'px'
+                  'top': top_bar_height + 'px',
                 });
               }
               else
