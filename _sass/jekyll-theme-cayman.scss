@@ -312,7 +312,7 @@ a {
 
   @include medium {
 
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
 
     font-size: 1.2rem;
 
@@ -322,7 +322,7 @@ a {
 
   @include small {
 
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
 
     font-size: 1rem;
 
@@ -817,11 +817,17 @@ a {
 .main-article-content {
   @include large {
     font-size: 1.35rem;
+    margin-right: 2em;
+    margin-top: 2em;
   }
   @include medium {
     font-size: 1.2rem;
+    margin-right: 1.5em;
+    margin-top: 1.5em;
   }
   @include small {
     font-size: 1rem;
+    margin-right: 1em;
+    margin-top: 1em;
   }
 }
