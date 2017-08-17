@@ -128,11 +128,14 @@
             }
             else {
               $content.css({
-                  'position': 'relative',
-                  'display': 'inline-block', 
-                  'left': (article_left - content_width) + 'px',
-                  'top': 'auto'
-                });
+                'position': 'relative',
+                'display': 'inline-block', 
+                'left': (article_left - content_width) + 'px',
+                'top': 'auto'
+              });
+              $('main-article').css({
+                'display': 'inline-block'
+              });
 
               function fixContent() {
                 $content = $('#myMainSideNav');
