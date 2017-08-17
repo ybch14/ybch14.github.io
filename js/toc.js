@@ -6,8 +6,8 @@
       title: '<h3>Contents</h3>',
       headers: 'h1, h2, h3, h4, h5',
       listType: 'dl', // values: [ol|ul]
-      showEffect: 'show', // values: [show|slideDown|fadeIn|none]
-      showSpeed: 'slow'  // set to 0 to deactivate effect
+      showEffect: 'none', // values: [show|slideDown|fadeIn|none]
+      showSpeed: 0  // set to 0 to deactivate effect
     },
     settings = $.extend(defaults, options);
 
@@ -88,7 +88,7 @@
         window.location.hash = '';
       });
     }
-
     render[settings.showEffect]();
+    console.log($(this).width());
   };
 })(jQuery);
