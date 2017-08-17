@@ -119,7 +119,7 @@
               {
                 $content.css({
                   'position': 'relative',
-                  'display': 'table-cell', 
+                  'display': 'inline-block', 
                   'float': 'none', 
                   'left': article_left + 'px',
                   'top': 'auto'
@@ -128,7 +128,7 @@
               else {
                 $content.css({
                   'position': 'relative',
-                  'display': 'table-cell', 
+                  'display': 'inline-block', 
                   'float': 'left',
                   'left': (article_left - content_width) + 'px',
                   'top': 'auto'
@@ -137,7 +137,7 @@
                   var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                   $content.css({
                     'position': 'fixed',
-                    'display': 'table-cell',
+                    'display': 'inline-block',
                     'float': 'left',
                     'top': top_bar_height + 'px',
                     'left': (article_left - content_width) + 'px'
@@ -146,7 +146,7 @@
                 else
                   $content.css({
                     'position': 'relative',
-                    'display': 'table-cell',
+                    'display': 'inline-block',
                     'float': 'left',
                     'top': 'auto',
                     'left': (article_left - content_width) + 'px'
