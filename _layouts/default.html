@@ -108,7 +108,7 @@
       </script>
       <script>
         jQuery(function($) {
-          $(window).resize(function () {
+          function RecalculateWhenResize() {
             var content_offset_top = $('#myMainSideNav').offset().top;
             function fixContent() {
               var $content = $('#myMainSideNav');
@@ -127,7 +127,9 @@
             }
             $(window).scroll(fixContent);
             fixContent();
-        });
+        }
+        $(window).resize(RecalculateWhenResize);
+        RecalculateWhenResize();
       });
       </script>
   </div>
