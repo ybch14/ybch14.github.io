@@ -106,6 +106,24 @@
           $('#myMainSideNav').toc();
         });
       </script>
+      <script>
+        jQuery(function($) {
+          function fixContent() {
+            var content = $('#myMainSideNav');
+            var content_offset_top = content.offset().top;
+            if ($(window).scrollTop() > content_offset_top)
+              content.css({
+                'position': 'fixed'
+              });
+            else
+              content.css({
+                'position': 'relative'
+              });
+          }
+          $(window).scroll(fixContent);
+          fixContent();
+        });
+      </script>
   </div>
     {% if site.google_analytics %}
       <script type="text/javascript">
