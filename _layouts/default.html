@@ -39,11 +39,11 @@
     <script type="text/javascript">
       var is_open = false;
       function openNav() {
-        document.getElementById("mySidenav").style.visibility = "visible";
+        document.getElementById("mySidenav-off").id = "mySidenav-on";
       }
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
-        document.getElementById("mySidenav").style.visibility = "hidden";
+        document.getElementById("mySidenav-on").id = "mySidenav-off";
       }
       function clickbutton() {
         if (is_open == false)
@@ -70,7 +70,7 @@
     </div>
     <div id="not-top">
       <script type="text/javascript" src="../js/toc.js"></script>
-      <div id="mySidenav" class="sidenav" style="display: block; visibility: hidden"></div>
+      <div id="mySidenav-off" class="sidenav" ></div>
       <div id="Main" class="main">
         <section class="page-header">
           <!-- <span class="openbuttion" onclick="openNav()">&#9776;</span>  -->

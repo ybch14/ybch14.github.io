@@ -766,7 +766,7 @@ a {
   }
 }
 
-#mySidenav {
+#mySidenav-on {
   @include large {
     width: 300px;
   }
@@ -776,6 +776,10 @@ a {
   @include small {
     width: 200px;
   }
+}
+
+#mySidenav-off {
+  width: 0;
 }
 
 .top-bar li:last-child a {
