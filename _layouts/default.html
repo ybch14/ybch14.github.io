@@ -130,11 +130,11 @@
       </script>
       <script>
         jQuery(function($) {
+          var content_width = $('#myMainSideNav').width();
+          var content_offset_top = $('#myMainSideNav').position().top;
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
-            var content_offset_top = $('#myMainSideNav').position().top;
             var article_left = $('.main-article').position().left - 80;
-            var content_width = $('#myMainSideNav').width();
             if (article_left < content_width)
             {
               $content.css({
@@ -172,6 +172,9 @@
                     'top': top_bar_height + 'px',
                     'left': (article_left - content_width) + 'px'
                   });
+                  $('.main-article').css({
+                    'display': 'inline-block'
+                  });
                 }
                 else
                   $content.css({
@@ -180,6 +183,9 @@
                     'float': 'left',
                     'top': 'auto',
                     'left': (article_left - content_width) + 'px'
+                  });
+                  $('main-article').css({
+                    'display': 'inline-block'
                   });
               }
             }
