@@ -107,26 +107,28 @@
         });
       </script>
       <script>
-        var content_offset_top = $('#myMainSideNav').offset().top;
         jQuery(function($) {
-          function fixContent() {
-            var $content = $('#myMainSideNav');
-            if ($(window).scrollTop() > content_offset_top) {
-              var top_bar_height = $('.top-bar ul')[0].offsetHeight;
-              $content.css({
-                'position': 'fixed',
-                'top': top_bar_height + 'px'
-              });
+          $(window).resize(function () {
+            var content_offset_top = $('#myMainSideNav').offset().top;
+            function fixContent() {
+              var $content = $('#myMainSideNav');
+              if ($(window).scrollTop() > content_offset_top) {
+                var top_bar_height = $('.top-bar ul')[0].offsetHeight;
+                $content.css({
+                  'position': 'fixed',
+                  'top': top_bar_height + 'px'
+                });
+              }
+              else
+                $content.css({
+                  'position': 'relative',
+                  'top': 'auto'
+                });
             }
-            else
-              $content.css({
-                'position': 'relative',
-                'top': 'auto'
-              });
-          }
-          $(window).scroll(fixContent);
-          fixContent();
+            $(window).scroll(fixContent);
+            fixContent();
         });
+      });
       </script>
   </div>
     {% if site.google_analytics %}
