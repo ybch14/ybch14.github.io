@@ -222,3 +222,10 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 5px 5px #666;
     transform: translateY(2px);
 }
+
+.main-article-content{
+    float: right;
+    display: table-cell;
+    margin-right: 2em;
+    margin-top: 2em;
+}

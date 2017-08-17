@@ -324,7 +324,7 @@ a {
 
     padding: 2rem 1rem;
 
-    font-size: 1.1rem;
+    font-size: 1rem;
 
   }
 
@@ -812,4 +812,16 @@ a {
     margin-right: -6px;
   }
   
+}
+
+.main-article-content {
+  @include large {
+    font-size: 1.35rem;
+  }
+  @include medium {
+    font-size: 1.2rem;
+  }
+  @include small {
+    font-size: 1rem;
+  }
 }
