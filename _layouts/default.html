@@ -111,14 +111,15 @@
         jQuery(function($) {
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
-            var article_left = $('.main-article').position().left - 80;
+            var content_offset_top = $('#myMainSideNav').offset().top;
+            var article_left = $('.main-article').position().left;
             var content_width = $('#myMainSideNav').width();
             if (article_left < content_width)
             {
               $content.css({
                 'position': 'relative',
-                'display': 'block', 
-                'left': (article_left + 80) + 'px',
+                'display': 'inline-block', 
+                'left': (article_left) + 'px',
                 'top': 'auto'
               });
               $('.main-article').css({
@@ -138,7 +139,7 @@
 
               function fixContent() {
                 $content = $('#myMainSideNav');
-                var content_offset_top = $('#myMainSideNav').offset().top;
+                
                 if ($(window).scrollTop() > content_offset_top) {
                   var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                   $content.css({
