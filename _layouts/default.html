@@ -118,9 +118,12 @@
             {
               $content.css({
                 'position': 'relative',
-                'display': 'inline-block', 
+                'display': 'block', 
                 'left': (article_left + 80) + 'px',
                 'top': 'auto'
+              });
+              $('.main-article').css({
+                'display': 'block'
               });
             }
             else {
@@ -130,32 +133,29 @@
                   'left': (article_left - content_width) + 'px',
                   'top': 'auto'
                 });
-            }
-            function fixContent() {
-              $content = $('#myMainSideNav');
-              if (article_left >= content_width) {
-                if ($(window).scrollTop() > content_offset_top) {
-                  var top_bar_height = $('.top-bar ul')[0].offsetHeight;
-                  $content.css({
-                    'position': 'fixed',
-                    'display': 'inline-block',
-                    'float': 'left',
-                    'top': top_bar_height + 'px',
-                    'left': (article_left - content_width) + 'px'
-                  });
-                }
-                else
-                  $content.css({
-                    'position': 'relative',
-                    'display': 'inline-block',
-                    'float': 'left',
-                    'top': 'auto',
-                    'left': (article_left - content_width) + 'px'
-                  });
+
+              function fixContent() {
+                $content = $('#myMainSideNav');
+                  if ($(window).scrollTop() > content_offset_top) {
+                    var top_bar_height = $('.top-bar ul')[0].offsetHeight;
+                    $content.css({
+                      'position': 'fixed',
+                      'display': 'inline-block',
+                      'top': top_bar_height + 'px',
+                      'left': (article_left - content_width) + 'px'
+                    });
+                  }
+                  else
+                    $content.css({
+                      'position': 'relative',
+                      'display': 'inline-block',
+                      'top': 'auto',
+                      'left': (article_left - content_width) + 'px'
+                    });
               }
-            }
             $(window).scroll(fixContent);
             fixContent();
+          }
         }
         $(window).resize(RecalculateWhenResize);
         RecalculateWhenResize();
