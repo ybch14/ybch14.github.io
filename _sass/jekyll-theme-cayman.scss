@@ -688,18 +688,6 @@ a {
 
 }
 
-.sidenav {
-  @include large {
-    margin-top: 55px;
-  }
-  @include medium {
-    margin-top: 48px;
-  }
-  @include small {
-    margin-top: 38px;
-  }
-}
-
 .sidenav a {
   @include large {
     font-size: 18px;
