@@ -224,6 +224,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-article-content{
-    float: right;
-    display: table-cell;
+    float: left;
+    display:table-cell;
+    top: auto;
+    left: auto;
+    position: relative;
+}
+
+.main-article-content p , dt {
+	-webkit-margin-before: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-margin-after: 0px;
+	line-height: 0.5;
+
+}
+
+.main-article {
+	display: table-cell;
 }

@@ -107,27 +107,52 @@
           $('#myMainSideNav').toc();
         });
       </script>
-      <!-- <script>
+      <script>
         jQuery(function($) {
           function RecalculateWhenResize() {
             var content_offset_top = $('#myMainSideNav').offset().top;
-            var content_offset_left = $('.main-article').position().left + $('.main-article').width();
+            var article_left = $('.main-article').position().left;
+            var content_left = $('#myMainSideNav').position().left;
+            var content_width = $('#myMainSideNav').width();
             function fixContent() {
               $content = $('#myMainSideNav');
-              if ($(window).scrollTop() > content_offset_top) {
-                var top_bar_height = $('.top-bar ul')[0].offsetHeight;
+              if (article_left < content_left + content_width)
+              {
                 $content.css({
-                  'position': 'fixed',
-                  'display': 'table-cell',
-                  'top': top_bar_height + 'px'
+                  'position': 'relative',
+                  'display': 'table-cell', 
+                  'float': 'none', 
+                  'left': article_left + 'px',
+                  'top': 'auto'
                 });
               }
-              else
+              else {
                 $content.css({
-                  'display': 'table-cell',
                   'position': 'relative',
-                  'top': 'auto',
+                  'display': 'table-cell', 
+                  'float': 'left',
+                  'left': (article_left - content_left - content_width) + 'px',
+                  'top': 'auto';
                 });
+                if ($(window).scrollTop() > content_offset_top) {
+                  var top_bar_height = $('.top-bar ul')[0].offsetHeight;
+                  $content.css({
+                    'position': 'fixed',
+                    'display': 'table-cell',
+                    'float': 'left',
+                    'top': top_bar_height + 'px',
+                    'left': (article_left - content_left - content_width) + 'px'
+                  });
+                }
+                else
+                  $content.css({
+                    'position': 'relative',
+                    'display': 'table-cell',
+                    'float': 'left',
+                    'top': 'auto',
+                    'left': (article_left - content_left - content_width) + 'px'
+                  });
+              }
             }
             $(window).scroll(fixContent);
             fixContent();
@@ -135,7 +160,7 @@
         $(window).resize(RecalculateWhenResize);
         RecalculateWhenResize();
       });
-      </script> -->
+      </script>
   </div>
     {% if site.google_analytics %}
       <script type="text/javascript">

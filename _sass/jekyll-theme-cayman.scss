@@ -814,17 +814,17 @@ a {
   
 }
 
-.main-article-content a {
-  @include large {
-    font-size: 1.35rem;
-    margin-left: 2em;
-  }
-  @include medium {
-    font-size: 1.2rem;
-    margin-left: 1.5em;
-  }
-  @include small {
-    font-size: 1rem;
-    margin-left: 1em;
-  }
-}
+// .main-article-content a {
+//   @include large {
+//     font-size: 1.35rem;
+//     margin-left: 2em;
+//   }
+//   @include medium {
+//     font-size: 1.2rem;
+//     margin-left: 1.5em;
+//   }
+//   @include small {
+//     font-size: 1rem;
+//     margin-left: 1em;
+//   }
+// }
