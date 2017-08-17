@@ -41,11 +41,13 @@
       function openNav() {
         // document.getElementById("mySidenav-off").id = "mySidenav-on";
         document.getElementById("main-off").id = "main-on";
+        console.log($('#myMainSideNav').width())
       }
       /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
       function closeNav() {
         // document.getElementById("mySidenav-on").id = "mySidenav-off";
         document.getElementById("main-on").id = "main-off";
+        console.log($('#myMainSideNav').width())
       }
       function clickbutton() {
         if (is_open == false)
