@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/animation.css">
   </head>
   <body>
-    
+
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
@@ -161,23 +161,6 @@
           $(window).scroll(RecalculateWhenResize);
           $(window).resize(RecalculateWhenResize);
           RecalculateWhenResize();
-        });
-      </script>
-
-      <script>
-        jQuery(function($){
-          function showTopBarShadow() {
-            var header = $('.page-header');
-            var header_height = header.height() + parseInt(header.css('padding-top')) * 2;
-            if ($(window).scrollTop() > header_height)
-            {
-              $('.top-bar').css({
-                'box-shadow': '0 2px 10px 1px #151515'
-              });
-            }
-          }
-          $(window).scroll(showTopBarShadow);
-          showTopBarShadow();
         });
       </script>
 
