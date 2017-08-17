@@ -107,7 +107,7 @@
       </script>
       <script>
         jQuery(function($) {
-          var content_width = $('#myMainSideNav').width() + 80;
+          var content_width = $('#myMainSideNav').width() + 120;
           var content_offset_top = $('#myMainSideNav').position().top;
           function RecalculateWhenResize() {
             var $content = $('#myMainSideNav');
@@ -133,7 +133,7 @@
                   'display': 'inline-block',
                   'float': 'left',
                   'top': top_bar_height + 'px',
-                  'left': (article_left - content_width) + 'px'
+                  'left': (article_left - content_width + 60) + 'px'
                 });
                 $('.main-article').css({
                   'display': 'inline-block'
@@ -145,7 +145,7 @@
                   'display': 'inline-block',
                   'float': 'left',
                   'top': 'auto',
-                  'left': (article_left - content_width) + 'px'
+                  'left': (article_left - content_width + 60) + 'px'
                 });
                 $('main-article').css({
                   'display': 'inline-block'
