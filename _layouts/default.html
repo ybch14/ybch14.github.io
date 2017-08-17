@@ -114,20 +114,23 @@
             function fixContent() {
               var $content = $('#myMainSideNav');
               $content.css({
-                'position': 'absolute',
-                'left': content_offset_left + 'px'
+                'position': 'relative',
+                'float': 'right'
               })
               if ($(window).scrollTop() > content_offset_top) {
                 var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                 $content.css({
                   'position': 'fixed',
                   'top': top_bar_height + 'px',
+                  'left': content_offset_left + 'px'
                 });
               }
               else
                 $content.css({
                   'position': 'relative',
-                  'top': 'auto'
+                  'top': 'auto',
+                  'left': '0',
+                  'float': 'right'
                 });
             }
             $(window).scroll(fixContent);
