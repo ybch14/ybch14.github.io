@@ -112,7 +112,7 @@
             var content_offset_top = $('#myMainSideNav').offset().top;
             var content_offset_left = $('.main-article').position().left + $('.main-article').width();
             function fixContent() {
-              $content = $('#myMainSideNav')
+              $content = $('#myMainSideNav');
               if ($(window).scrollTop() > content_offset_top) {
                 var top_bar_height = $('.top-bar ul')[0].offsetHeight;
                 $content.css({
