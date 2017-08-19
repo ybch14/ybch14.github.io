@@ -801,3 +801,15 @@ a {
     font-size: 1rem;
   }
 }
+
+.top-bar li a {
+  @include large {
+    height: 55px;
+  }
+  @include medium {
+    height: 48px;
+  }
+  @include small {
+    height: 38px;
+  }
+}
