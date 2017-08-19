@@ -23,15 +23,21 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
 
 ## TODO
 
+- DESIGN SIDE BAR NAV MENU
 - add FCN 
 - add deeplab
 - add dilated convolution
 - add conditional random field
 - add deconvolution
 - add FCIS
+- add R-FCN
 - complete alexnet
 - add 3D deep learing methods (pointnet etc.)
+- read GoogLeNet, VGG, ResNet, ResNeXt and DenseNet
+- read YOLO (Ross Girshirck new work)
+- read DSOD (detection method without convolution network, based on densenet )
+- read PSPNet (The highest accuracy of segmentation)
 
 ## Note
- 
+
 This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by ```mermaid``` ([Github](https://github.com/knsv/mermaid)). Great thanks to the author!
