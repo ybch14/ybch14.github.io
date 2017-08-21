@@ -20,11 +20,13 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
    - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
 - ImageNet Evolution
    - [AlexNet (The first neural network for ImageNet classification)](ImageNet_evolution/AlexNet.md)
+- Semantic Segmentation
+   - [FCN (Fully Connected Networks)](Semantic_segmentation/FCN.md)
 
 ## TODO
 
 - DESIGN SIDE BAR NAV MENU
-- add FCN 
+- complete FCN 
 - add deeplab
 - add dilated convolution
 - add conditional random field
