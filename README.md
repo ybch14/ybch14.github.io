@@ -26,7 +26,6 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
 ## TODO
 
 - DESIGN SIDE BAR NAV MENU
-- complete FCN 
 - add deeplab
 - add dilated convolution
 - add conditional random field
@@ -42,4 +41,5 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
 
 ## Note
 
-This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by ```mermaid``` ([Github](https://github.com/knsv/mermaid)). Great thanks to the author!
+- This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by ```mermaid``` ([Github](https://github.com/knsv/mermaid)). Great thanks to the author!
+- The side bar is under construction.
