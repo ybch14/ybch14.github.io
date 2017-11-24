@@ -32,8 +32,7 @@ I'm a student at Department of Electronic Engineering, Tsinghua University, and 
         - Deconvolution
 - Natural Language Processing
     - Machine Learning basis
-        - [Dirichlet distribution & Multinomial distribution](Machine_learning_basis/distribution.md)
-        - LDA (Latent Dirichlet Allocation)
+        - [LDA (Latent Dirichlet Allocation)](Machine_learning_basis/LDA.md)
         - CRF (Conditional Random Field)
 
 ## TODO
