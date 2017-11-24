@@ -22,5 +22,5 @@ $$f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\Pi_{i=1}
 类别分布，描述的是一个随机矢量的每一个元素都只能取有限个状态中的一个的情况下的概率分布。
 
 - 参数：$k>0$ 个类别；每个类别的概率 $p_i, i = 1, 2, \dots, k$
-- PMF：f(\mathbf{x}\|\mathbf{p}) = \Pi_{i=1}^kp_i^{[\mathbf{x}=i]}
+- PMF：$f(\mathbf{x}\|\mathbf{p}) = \Pi_{i=1}^kp_i^{[\mathbf{x}=i]}$
 
