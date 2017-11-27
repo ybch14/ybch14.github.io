@@ -45,10 +45,10 @@ $$f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\Pi_{i=1}
 |$V$|int|词典长度|
 |$M$|int|文档数目|
 |$N_{d = 1\dots M}$|int|文档 $d$ 中词的个数|
-|$\alpha$|$K$ 维向量|文档话题的先验权重（主题分布的 Dirichlet 先验的参数），通常每个分量都小于 1|
-|$\beta$|$V$ 维向量|话题词语的先验权重（词语分布的 Dirichlet 先验的参数），通常每个分量都小于 1|
-|$\phi_{k=1\dots K}$|$V$ 维向量|主题 $k$ 中的词语分布|
-|$\theta_{d=1\dots M}$|$K$ 维向量|文档 $d$ 中的主题分布|
+|$\alpha$|$K$ 维向量|文档话题的先验权重（主题分布的 Dirichlet 先验的参数，通常每个分量都小于 1）|
+|$\beta$|$V$ 维向量|话题词语的先验权重（词语分布的 Dirichlet 先验的参数，通常每个分量都小于 1）|
+|$\phi_{k=1\dots K}$|$V$维向量|主题 $k$ 中的词语分布|
+|$\theta_{d=1\dots M}$|$K$维向量|文档 $d$ 中的主题分布|
 |$z_{m=1\dots M,n = 1\dots N_d}$|int,$[1, K]$|文档 $m$ 中第 $n$ 个词的主题编号|
-|$\omega_{m=1\dots M,n = 1\dots N_d}$|int, $[1, V]$|文档 $m$ 中第 $n$ 个词的词语编号|
+|$\omega_{m=1\dots M,n = 1\dots N_d}$|int,$[1, V]$|文档 $m$ 中第 $n$ 个词的词语编号|
 
