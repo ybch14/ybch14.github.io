@@ -90,5 +90,11 @@ $$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}{\prod_
 
 所以有：
 
-$$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}$$
+$$\int_{\theta_j}P(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = \int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}$$
+
+同理，可以用类似的方法得到包含 $\phi$ 的部分的积分结果：
+
+$$\int_\phi\prod_{i=1}^KP(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi = \prod_{i=1}^K\int_{\phi_i}P(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi_i$$
+
+$$ = \prod_{i=1}^K\int_{\phi_i}\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^VGamma(\beta_r)}\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi_i$$
 
