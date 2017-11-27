@@ -86,9 +86,9 @@ $$\int_{\theta_j}P(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = 
 
 可以看出，得到的表达式具有 Dirichlet 分布的形式。利用 Dirichlet 分布的归一化性质：
 
-$$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K(n_{j, (\cdot)}^{(i)}+\alpha_i))}{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j=1$$
+$$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j=1$$
 
 所以有：
 
-$$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^K(n_{j, (\cdot)}^{(i)}+\alpha_i))}\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K(n_{j, (\cdot)}^{(i)}+\alpha_i))}{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j$$
+$$\int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i+n_{j, (\cdot)}^{(i)}-1}d\theta_j = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}$$
 
