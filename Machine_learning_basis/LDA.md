@@ -62,6 +62,6 @@ $$P(\mathbf{W}, \mathbf{Z}, \theta, \phi;\alpha, \beta) = \prod_{i=1}^KP(\phi_i;
 
 由于联合分布中存在 $\theta$ 和 $\phi$，在进行 Gibbs 采样的时候比较麻烦，因此采用折叠 Gibbs 采样（collapsed Gibbs sampling），用积分消除 $\theta$ 和 $\phi$：
 
-$$(P(\mathbf{W}, \mathbf{Z};\alpha, \beta) = \int_\theta\int_\phi P(\mathbf{W}, \mathbf{Z}, \theta, \phi;\alpha, \beta)d\phi d\theta$$
+$$P(\mathbf{W}, \mathbf{Z};\alpha, \beta) = \int_\theta\int_\phi P(\mathbf{W}, \mathbf{Z}, \theta, \phi;\alpha, \beta)d\phi d\theta$$
 
-$$ = \int_\phi\prod_{i=1}^KP(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}\|\phi_{z_{j, t}})d\phi\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}\|\theta_j)d\theta$$
+$$ = \int_\phi\prod_{i=1}^KP(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta$$
