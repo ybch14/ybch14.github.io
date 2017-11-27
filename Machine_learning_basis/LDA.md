@@ -12,7 +12,7 @@ Latent Dirichlet Allocation，自然语言处理中一种非常重要的主题�
 
 - 参数：$\alpha_1, \dots, \alpha_K, K\ge 2, \alpha_i > 0$
 - PDF：
-$$f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\Pi_{i=1}^K\Gamma(\alpha_i)}\Pi_{i=1}^K x_i^{\alpha_i-1}$$
+\\(f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\Pi_{i=1}^K\Gamma(\alpha_i)}\Pi_{i=1}^K x_i^{\alpha_i-1}\\)
 - 均值：$E[X_i] = \frac{\alpha_i}{\sum_k \alpha_k}$
 - 方差：$Var[X_i] = \frac{\alpha_i(\alpha_0 - \alpha_i)}{\alpha_0^2(\alpha_0+1)}, \alpha_0 = \sum_k\alpha_k$
 - 协方差：$Cov[X_i, X_j] = \frac{-\alpha_i\alpha_j}{\alpha_0^2(\alpha_0+1)} (i\ne j)$
@@ -58,13 +58,13 @@ $$f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\Pi_{i=1}
 
 对于含有隐变量的模型，通常训练的目标都是希望得到隐变量的分布。LDA 也是如此。在 LDA 模型中，隐含的变量就是每个词语所属的主题。因此训练期望的目标就是找到在已知模型参数和其他所有词语及其主题时，某一个词语的主题概率分布。想得到的分布是一个条件分布，因此考虑用 Gibbs 采样方法估计分布。首先考虑模型的联合概率分布（为了简化分析，假设所有文档长度相同，为 $N$）：
 
-$$
+\\(
 P(\mathbf{W}, \mathbf{Z}, \theta, \phi;\alpha, \beta) = \Pi_{i=1}^KP(\phi_i;\beta)\Pi_{j=1}^MP(\theta_j;\alpha)\Pi_{t=1}^NP(Z_{j, t}|\theta_j)P(\omega_{j, t}|\phi_{z_{j, t}})
-$$
+\\)
 
 由于联合分布中存在 $\theta$ 和 $\phi$，在进行 Gibbs 采样的时候比较麻烦，因此采用折叠 Gibbs 采样（collapsed Gibbs sampling），用积分消除 $\theta$ 和 $\phi$：
 
-$$
+\\(
 P(\mathbf{W}, \mathbf{Z};\alpha, \beta) = \int_\theta\int_\phi P(\mathbf{W}, \mathbf{Z}, \theta, \phi;\alpha, \beta)d\phi d\theta 
  = \int_\phi\Pi_{i=1}^KP(\phi_i;\beta)\Pi_{j=1}^M\Pi_{t=1}^NP(\omega_{j, t}\|\phi_{z_{j, t}})d\phi\int_\theta\Pi_{j=1}^MP(\theta_j;\alpha)\Pi_{t=1}^NP(Z_{j, t}\|\theta_j)d\theta
-$$
+\\)
