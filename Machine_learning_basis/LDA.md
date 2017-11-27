@@ -72,4 +72,4 @@ $$\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\t
 
 接下来只看求积符号内部的表达式。很显然这个表达式代表了模型中和主题相关的隐藏部分。将 Dirichlet 分布的表达式代入可得：
 
-$$\int_\theta_jP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = \int_\theta_j\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i-1}\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j$$
+$$\int_{\theta_j}P(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = \int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i-1}\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j$$
