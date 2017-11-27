@@ -48,11 +48,13 @@ $$f(\mathbf{X}; \mathbf{\alpha}) = \frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=
 |$\alpha$|$K$ 维向量|文档话题的先验权重（主题分布的 Dirichlet 先验的参数，通常每个分量都小于 1）|
 |$\beta$|$V$ 维向量|话题词语的先验权重（词语分布的 Dirichlet 先验的参数，通常每个分量都小于 1）|
 |$\phi_{k=1\dots K}$|$V$维向量|主题 $k$ 中的词语分布|
-|$\phi$|$K\times V$维向量|词语分布的矩阵形式|
+|$\phi$|$K\times V$矩阵|词语分布的矩阵形式|
 |$\theta_{d=1\dots M}$|$K$维向量|文档 $d$ 中的主题分布|
-|$\theta$|$M\times K$维向量|主题分布的矩阵形式|
+|$\theta$|$M\times K$矩阵|主题分布的矩阵形式|
 |$z_{m=1\dots M,n = 1\dots N_d}$|int,$[1, K]$|文档 $m$ 中第 $n$ 个词的主题编号|
+|$\mathbf{Z}$|$M\times N$矩阵|主题编号矩阵形式|
 |$\omega_{m=1\dots M,n = 1\dots N_d}$|int,$[1, V]$|文档 $m$ 中第 $n$ 个词的词语编号|
+|$\mathbf{W}$|$M\times N$矩阵|词语编号矩阵形式|
 
 ## 估计隐变量
 
@@ -72,4 +74,8 @@ $$\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\t
 
 接下来只看求积符号内部的表达式。很显然这个表达式代表了模型中和主题相关的隐藏部分。将 Dirichlet 分布的表达式代入可得：
 
-$$\int_{\theta_j}P(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = \int_{\theta_j}P(\theta_j;\alpha)\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i-1}\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j$$
+$$\int_{\theta_j}P(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j = \int_{\theta_j}\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\prod_{i=1}^K\theta_{j, i}^{\alpha_i-1}\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta_j$$
+
+接下来问题的关键是求解 $\prod_{t=1}^NP(Z_{j, t}|\theta_j)$ 。这一项的含义是对于某一个文档，求解文档中所有词的主题编号完全符合给定值的概率。如果从词语的角度看，第 $j$ 个文档中的第 $t$ 个词的主题编号为 $i$ 的概率为 $\theta_{j, i}$。因此，如果要求所有词的主题编号恰好为给定值的概率，只需要将每一个词取给定主题编号的概率相乘就行了。因此，定义 $n_{j, r}^{(i)}$ 为第 $j$ 个文档中词语编号为 $r$，且主题编号为 $i$ 的词的个数（如果某一个维度被忽略，则用 $(\cdot)$ 代替，如 $n_{j, (\cdot)}^{(i)}$ 为第 $j$ 个文档中主题编号为 $i$ 的词的个数，$n_{(\cdot), r}^{(i)}$ 为所有文档中词语编号为 $r$，且主题编号为 $i$ 的词的个数）。从上面的分析可以知道，
+
+$$\prod_{t=1}^NP(Z_{j, t}|\theta_j) = \prod_{i=1}^K\theta_{j, i}^{n_{j, (\cdot)}^{(i)}}$$
