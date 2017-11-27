@@ -68,9 +68,7 @@ $$ = \int_\phi\prod_{i=1}^KP(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j,
 
 先考虑和 $\theta$ 有关的部分：
 
-$$\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta=\prod_{j=1}^M$$
-
-$$\int_{\theta_j} P(\theta_j;\alpha)\prod_{t=1}^N P(Z_{j, t}|\theta_j)d\theta_j$$
+$$\int_\theta\prod_{j=1}^MP(\theta_j;\alpha)\prod_{t=1}^NP(Z_{j, t}|\theta_j)d\theta=\prod_{j=1}^M\int_{\theta_j} P(\theta_j;\alpha)\prod_{t=1}^N P(Z_{j, t}|\theta_j)d\theta_j$$
 
 接下来只看求积符号内部的表达式。很显然这个表达式代表了模型中和主题相关的隐藏部分。将 Dirichlet 分布的表达式代入可得：
 
