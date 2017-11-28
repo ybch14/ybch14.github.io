@@ -119,3 +119,13 @@ $$
 $$
 P(\mathbf{W}, \mathbf{Z};\alpha, \beta) = \prod_{j=1}^M\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\frac{\prod_{r=1}^V\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
 $$
+
+对于 Gibbs 采样，在对某一个元素进行采样的时候，其采样表达式需要计算在已知其他所有元素时该元素的条件分布。所以在计算 Gibbs 采样表达式时，需要关注 $P(z_{m, n}\|\mathbf{Z_{-(m, n)}}, \mathbf{W};\alpha, \beta)$。另外，为了计算方便，只需要关注采样表达式的相对大小，这样对每个元素计算出相对值后进行归一化即可。
+
+$$
+P(z_{m, n} = k|\mathbf{Z_{-(m, n)}}, \mathbf{W};\alpha, \beta) \propto P(z_{m, n} = k, \mathbf{Z_{-(m, n)}}, \mathbf{W};\alpha, \beta)\propto\prod_{j=1}^M\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\prod_{r=1}^V\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
+$$
+
+$$
+ = \prod_{j\ne m}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}\cdot\frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\prod_{r\ne v}\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}\cdot\prod_{i=1}^K\Gamma(n_{(\cdot), v}^{(i)}+\beta_v)
+$$
