@@ -129,3 +129,7 @@ $$
 $$
  = \prod_{j\ne m}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}\cdot\frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\prod_{r\ne v}\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}\cdot\prod_{i=1}^K\Gamma(n_{(\cdot), v}^{(i)}+\beta_v)
 $$
+
+$$
+\propto \frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\Gamma(n_{(\cdot), v}^{(i)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
+$$
