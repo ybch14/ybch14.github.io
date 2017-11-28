@@ -168,3 +168,8 @@ $$
 - 用 Gibbs 采样表达式对每个文档中每个词的主题进行重新采样，得到新主题编号（注意到采样表达式中 $p(word\\topic)$ 是训练过程中已经保存下来的模型参数，因此在更新主题编号的时候只需要计算 $p(topic\|doc)$）
 - 重复上述采样过程直到 Gibbs 采样收敛
 - 计算文档的主题分布 $\theta_{new, k} = \frac{n_{new, (\cdot)}^{(k)}+\alpha_k}{\sum_{i=1}^Kn_{new, (\cdot)}^{(i)}+\alpha_i}$
+
+## 参考文献
+
+1. https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
+2. Heinrich, Gregor. (2005). Parameter Estimation for Text Analysis
