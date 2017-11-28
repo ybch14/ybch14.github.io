@@ -98,7 +98,7 @@ $$\int_\phi\prod_{i=1}^KP(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}
 
 $$ = \prod_{i=1}^K\int_{\phi_i}\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\prod_{r=1}^V\phi_{i, r}^{\beta_r-1}\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi_i$$
 
-与之前的思路类似，$\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}\|\phi_{z_{j, t}})d\phi_i$ 代表所有文档中所有词语编号恰好符合给定值的概率；从词语的角度看的话，这个概率等价于将每一个词取给定词语编号的概率相乘：
+与之前的思路类似，$\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}\|\phi_{z_{j, t}})$ 代表所有文档中所有词语编号恰好符合给定值的概率；从词语的角度看的话，这个概率等价于将每一个词取给定词语编号的概率相乘：
 
 $$
 \prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}}) = \prod_{r=1}^V\phi_{i, r}^{n_{(\cdot), r}^{(i)}}
@@ -112,4 +112,10 @@ $$
 
 $$
  = \prod_{i=1}^K\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\frac{\prod_{r=1}^V\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
+$$
+
+接下来把上面的计算结果代入积分式，可以得到模型联合分布的解析表达式：
+
+$$
+P(\mathbf{W}, \mathbf{Z};\alpha, \beta) = \prod_{j=1}^M\frac{\Gamma(\sum_{i=1}^K\alpha_i)}{\prod_{i=1}^K\Gamma(\alpha_i)}\frac{\prod_{i=1}^K\Gamma(n_{j, (\cdot)}^{(i)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{j, (\cdot)}^{(i)}+\alpha_i)}\prod_{i=1}^K\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\frac{\prod_{r=1}^V\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
 $$
