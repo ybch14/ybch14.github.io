@@ -101,5 +101,15 @@ $$ = \prod_{i=1}^K\int_{\phi_i}\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\
 与之前的思路类似，$\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}\|\phi_{z_{j, t}})d\phi_i$ 代表所有文档中所有词语编号恰好符合给定值的概率；从词语的角度看的话，这个概率等价于将每一个词取给定词语编号的概率相乘：
 
 $$
-\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi_i = \prod_{r=1}^V\phi_{i, r}^{n_{(\cdot), r}^{(i)}}
+\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}}) = \prod_{r=1}^V\phi_{i, r}^{n_{(\cdot), r}^{(i)}}
+$$
+
+所以：
+
+$$
+\prod_{i=1}^K\int_{\phi_i}P(\phi_i;\beta)\prod_{j=1}^M\prod_{t=1}^NP(\omega_{j, t}|\phi_{z_{j, t}})d\phi_i = \prod_{i=1}^K\int_{\phi_i}\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\prod_{r=1}^V\phi_{i, r}^{\beta_r+n_{(\cdot), r}^{(i)}-1}d\phi_i
+$$
+
+$$
+ = \prod_{i=1}^K\frac{\Gamma(\sum_{r=1}^V\beta_r)}{\prod_{r=1}^V\Gamma(\beta_r)}\frac{\prod_{r=1}^V\Gamma(n_{(\cdot), r}^{(i)}+\beta_r)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i)}+\beta_r)}
 $$
