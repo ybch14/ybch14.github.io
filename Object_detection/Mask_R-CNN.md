@@ -50,7 +50,7 @@ Faster R-CNN 的扩展，在其基础上增加了生成 segmentation mask 的功
 - 训练样本的采样方法和 Fast R-CNN 一样，先采样图片后采样候选框，正负样本框比例为1:3
 - RPN anchors 共有 15 种，5 种 scale，3 种长宽比（见 FPN）
 - 为了方便实现，RPN 和 Mask R-CNN 不共享卷积网络参数
-- 测试过程中 C4 backbone 网络选取 300 个候选框，FPN 选取 1000 个候选框；box 回归分支作用于这些候选框，之后进行 NMS 。mask 分支作用于得分最高的 100 个检测框。mask 分支在每个候选框上输出 K 个 mask，但是只取第 k 个，k 为分类分支输出的类别编号。mask 浮点输出 resize 为 RoI 大小，以0.5 为
+- 测试过程中 C4 backbone 网络选取 300 个候选框，FPN 选取 1000 个候选框；box 回归分支作用于这些候选框，之后进行 NMS 。mask 分支作用于得分最高的 100 个检测框。mask 分支在每个候选框上输出 K 个 mask，但是只取第 k 个，k 为分类分支输出的类别编号。mask 浮点输出 resize 为 RoI 大小，以 0.5 为阈值进行二值化。
 
 ### 实验结果
 
@@ -84,7 +84,7 @@ sigmoid + 二值 loss 能避免竞争，提高准确率
 
 - RoIAlign 比较
 
-|   Method   | align？ | bilinear | agg. |    AP    | AP$_{50}$ | AP$_{75}$ |
+|   Method   | align? | bilinear | agg. |    AP    | AP$_{50}$ | AP$_{75}$ |
 | :--------: | :----: | :------: | :--: | :------: | :-------: | :-------: |
 | RoIPooling |   no   |    no    | max  |   26.9   |   48.8    |   26.4    |
 |  RoIWarp   |   no   |   yes    | max  |   27.2   |   49.2    |   27.1    |
