@@ -143,5 +143,9 @@ $$
 利用 $\Gamma$ 函数的性质可以对上面的式子进行化简：
 
 $$
- = \frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}\frac{\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}\prod_{i=1}^K\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{n_{(\cdot), v}^{(i),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r}
+ = \frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}\frac{n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\prod_{i=1}^K\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{n_{(\cdot), v}^{(i),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r}
+$$
+
+$$
+\propto \frac{n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\frac{n_{(\cdot), v}^{(i),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r}
 $$
