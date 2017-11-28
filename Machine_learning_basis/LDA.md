@@ -137,15 +137,17 @@ $$
 引入标记 $n_{j, r}^{(i),-(m,n)}$，代表第 $j$ 个文档中词语编号为 $r$，且主题编号为 $i$ 的词的个数，但是不考虑第 $m$ 个文档的第 $n$ 个词语。当 $z_{m, n} = k$ 且 $w_{m, n} = r$ 时，易知有如下关系：$i\ne k$ 时 $n_{m, (\cdot)}^{(i)} = n_{m, (\cdot)}^{(i), -(m, n)}$；$i = k$ 时 $n_{m, (\cdot)}^{(k)} = n_{m, (\cdot)}^{(k), -(m, n)} + 1$；$v\ne r$ 时 $n_{(\cdot), r}^{(i)} = n_{(\cdot), r}^{(i), -(m, n)}$；$i\ne k$ 时 $n_{(\cdot), v}^{(i)} = n_{(\cdot), v}^{(i), -(m, n)}$；$i = k$ 时 $n_{(\cdot), v}^{(k)} = n_{(\cdot), v}^{(k), -(m, n)} + 1$。因此：
 
 $$
- = \frac{\prod_{i\ne k}\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i+1)}\Gamma(n_{m, (\cdot)}^{k, -(m, n)}+\alpha_k+1)\prod_{i\ne k}\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{\Gamma(n_{(\cdot), v}^{(i),-(m,n)}+\beta_v+1)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r+1)}
+ = \frac{\prod_{i\ne k}\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i+1)}\Gamma(n_{m, (\cdot)}^{k, -(m, n)}+\alpha_k+1)\prod_{i\ne k}\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{\Gamma(n_{(\cdot), v}^{(k),-(m,n)}+\beta_v+1)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(k), -(m,n)}+\beta_r+1)}
 $$
 
 利用 $\Gamma$ 函数的性质可以对上面的式子进行化简：
 
 $$
- = \frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}\frac{n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\prod_{i=1}^K\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{n_{(\cdot), v}^{(i),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r}
+ = \frac{\prod_{i=1}^K\Gamma(n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}{\Gamma(\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i)}\frac{n_{m, (\cdot)}^{(k), -(m,n)}+\alpha_k}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\prod_{i=1}^K\frac{\Gamma(n_{(\cdot), v}^{(i), -(m, n)}+\beta_v)}{\Gamma(\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r)}\frac{n_{(\cdot), v}^{(k),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(k), -(m,n)}+\beta_r}
 $$
 
 $$
-\propto \frac{n_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\frac{n_{(\cdot), v}^{(i),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(i), -(m,n)}+\beta_r}
+P(z_{m, n} = k|\mathbf{Z_{-(m, n)}}, \mathbf{W};\alpha, \beta) \propto \frac{n_{m, (\cdot)}^{(k), -(m,n)}+\alpha_k}{\sum_{i=1}^Kn_{m, (\cdot)}^{(i), -(m,n)}+\alpha_i}\frac{n_{(\cdot), v}^{(k),-(m,n)}+\beta_v}{\sum_{r=1}^Vn_{(\cdot), r}^{(k), -(m,n)}+\beta_r}
 $$
+
+至此，推导得出了 LDA 因变量条件分布的 Gibbs 采样表达式。观察改表达式可以发现，左边的分式代表 $p(topic|doc)$，右边的分式代表 $p(word|topic)$
