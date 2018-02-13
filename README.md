@@ -11,13 +11,17 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
 ## Content
 - Computer Vision
     - Object detection
-        - [Selective Search](Object_detection/Selective_Search.md)
-        - [R-CNN (Region-based CNN)](Object_detection/R-CNN.md)
-        - [SPP (Spatial Pyramid Pooling)](Object_detection/SPP.md)
-        - [Fast R-CNN (Faster version of R-CNN)](Object_detection/Fast_R-CNN.md)
-        - [Faster R-CNN (Faster version of Fast R-CNN)](Object_detection/Faster_R-CNN.md)
-        - [FPN (Feature Pyramid Network)](Object_detection/FPN.md)
-        - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
+        - Region Proposal Based Method
+            - [Selective Search](Object_detection/Selective_Search.md)
+            - [R-CNN (Region-based CNN)](Object_detection/R-CNN.md)
+            - [SPP (Spatial Pyramid Pooling)](Object_detection/SPP.md)
+            - [Fast R-CNN (Faster version of R-CNN)](Object_detection/Fast_R-CNN.md)
+            - [Faster R-CNN (Faster version of Fast R-CNN)](Object_detection/Faster_R-CNN.md)
+            - [FPN (Feature Pyramid Network)](Object_detection/FPN.md)
+            - [Mask R-CNN (Add semanic segmentation task on Faster R-CNN)](Object_detection/Mask_R-CNN.md)
+        - Without Proposal Method
+            - YOLO (You only look once, object detection without region proposals)
+            - SSD (Single-shot MultiBox Detector, object detection without region proposals)
     - ImageNet Evolution
         - [AlexNet (The first neural network for ImageNet classification, ILSVRC 12 winner)](ImageNet_evolution/AlexNet.md)
         - GoogLeNet (ILSVRC 14 winner)
@@ -33,16 +37,14 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
     - 3D Deep Learning
         - PointNet & PointNet++ (Point cloud deep learning architecture)
         - PointCNN (Another point cloud deep learning method)
-    - Deep Learning basis
-        - Dilated Convolution
-        - Deconvolution
+
 - Natural Language Processing
     - Machine Learning basis
         - [LDA (Latent Dirichlet Allocation)](Machine_learning_basis/LDA.md)
         - CRF (Conditional Random Field)
     - Relation Extraction
-        - Fully Supervised
-        - Distant Supervised
+        - Fully Supervised Method
+        - Distant Supervised Method
 
 ## TODO
 
