@@ -29,7 +29,7 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
         - [FCN (Fully Connected Networks)](Semantic_segmentation/FCN.md)
         - DeepLab (First introducing CRF)
         - FCIS (COCO 2016 winner)
-        - R-FCN
+        - R-FCN (Region-based FCN)
     - 3D Deep Learning
         - PointNet & PointNet++ (Point cloud deep learning architecture)
         - PointCNN (Another point cloud deep learning method)
