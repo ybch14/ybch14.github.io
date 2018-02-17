@@ -286,6 +286,7 @@ function ClickShowButton3()
     inception2_conv3x3 --> inception2_concat;
     inception2_conv5x5 --> inception2_concat;
     inception2_conv4_1x1 --> inception2_concat;
+    inception2_concat --> pool3;
     pool3 --> inception3_conv1_1x1;
     pool3 --> inception3_conv2_1x1;
     pool3 --> inception3_conv3_1x1;
