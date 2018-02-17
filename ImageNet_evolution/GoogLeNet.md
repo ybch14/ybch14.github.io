@@ -20,7 +20,7 @@ mermaid.initialize({startOnLoad:true});
 </script>
 <script type="text/javascript">
 var is_show = true;
-function ClickShowButton()
+function ClickShowButton1()
 {
     if (is_show == false)
     {
@@ -36,7 +36,7 @@ function ClickShowButton()
     }
 }
 </script>
-<center><button class="button show" id="show-button" onclick="ClickShowButton()">
+<center><button class="button show" id="show-button-naive-inception" onclick="ClickShowButton1()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
@@ -62,7 +62,8 @@ function ClickShowButton()
     pool3x3 --> filter;
 </div>
 </center> 
-    - 问题：在输入通道数较多时，$5\times 5$ 卷积的计算消耗很大。另外，由于模块中含有 pooling 部分，其输出通道数和输入通道数相同，因此整个 Inception 模块的输出通道数必然大于输入通道数。这使得当很多 Inception 模块堆叠起来的时候，特征图通道数会迅速增加，使得整个网络结构的计算效率非常低。
+
+- 问题：在输入通道数较多时，$5\times 5$ 卷积的计算消耗很大。另外，由于模块中含有 pooling 部分，其输出通道数和输入通道数相同，因此整个 Inception 模块的输出通道数必然大于输入通道数。这使得当很多 Inception 模块堆叠起来的时候，特征图通道数会迅速增加，使得整个网络结构的计算效率非常低。
 
 - 改进版本：维度降低
 
@@ -72,7 +73,7 @@ mermaid.initialize({startOnLoad:true});
 </script>
 <script type="text/javascript">
 var is_show = true;
-function ClickShowButton()
+function ClickShowButton2()
 {
     if (is_show == false)
     {
@@ -88,7 +89,7 @@ function ClickShowButton()
     }
 }
 </script>
-<center><button class="button show" id="show-button" onclick="ClickShowButton()">
+<center><button class="button show" id="show-button-dimreduct-inception" onclick="ClickShowButton2()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
