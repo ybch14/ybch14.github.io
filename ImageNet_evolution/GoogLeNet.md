@@ -360,7 +360,7 @@ function ClickShowButton3()
     inception8_concat --> inception9_pool3x3;
     inception9_conv2_1x1 --> inception9_conv3x3;
     inception9_conv3_1x1 --> inception9_conv5x5;
-    inception9_pool3x3 --> inception_conv4_1x1;
+    inception9_pool3x3 --> inception9_conv4_1x1;
     inception9_conv1_1x1 --> inception9_concat;
     inception9_conv3x3 --> inception9_concat;
     inception9_conv5x5 --> inception9_concat;
