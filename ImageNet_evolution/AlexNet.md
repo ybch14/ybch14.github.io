@@ -4,7 +4,7 @@
 
 ### 网络结构
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
+<script type="text/javascript" src="../js/mermaid.js"></script>
 <script type="text/javascript">
 mermaid.initialize({startOnLoad:true});
 </script>
@@ -65,3 +65,9 @@ function ClickShowButton()
 </center>
 
 ### ReLU
+
+传统激活函数（ReLU，$tanh$）都有存在饱和的问题。因此采用一种 SGD 收敛更快的激活函数 $f(x) = \max (0, x)$，称为 ReLU（修正线性单元，Rectified Linear Units）。
+
+### LRN
+
+ReLU 激活函数的有点是不需要因为避免饱和而对输入数据做归一化。但是，作者发现下面的局部归一化方法能够得到更好的泛化能力。记
