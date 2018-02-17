@@ -137,13 +137,13 @@ function ClickShowButton3()
 {
     if (is_show == false)
     {
-        document.getElementById('googlenet').style.display = "block";
+        document.getElementById('googlenet-graph').style.display = "block";
         document.getElementById('show-button-googlenet').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = true;
     }
     else
     {
-        document.getElementById('googlenet').style.display = "none";
+        document.getElementById('googlenet-graph').style.display = "none";
         document.getElementById('show-button-googlenet').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Show Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
         is_show = false;
     }
@@ -157,7 +157,7 @@ function ClickShowButton3()
 <i class="demo-icon icon-down-open"></i>
 </span></button></center>
 <center>
-<div class="mermaid" id="googlenet" style="display: block">
+<div class="mermaid" id="googlenet-graph" style="display: block">
     graph TD;
     image["image"];
     conv1["Conv 7k 2s"];
