@@ -37,17 +37,17 @@ function ClickShowButton()
 <div class="mermaid" id="mermaid-graph" style="display: block">
     graph TD;
     image["Image"];
-    conv1["Conv [k = 11, s = 4, c = 96] + ReLU + LRN"];
-    pool1["Max Pooling [k = 3, s = 2]"];
-    conv2["Conv [k = 5, s = 1, p = 2, c = 256] + ReLU + LRN"];
-    pool2["Max Pooling [k = 3, s = 2]"];
-    conv3["Conv [k = 3, s = 1, p = 1, c = 384] + ReLU"];
-    conv4["Conv [k = 3, s = 1, p = 1, c = 384] + ReLU"];
-    conv5["Conv [k = 3, s = 1, p = 1, c = 256] + ReLU"];
-    pool5["Max Pooling [k = 3, s = 2]"];
-    fc6["fc [o = 4096]"];
-    fc7["fc [o = 4096]"];
-    fc8["fc [o = 1000]"];
+    conv1["Conv 11k 4s 96c + ReLU + LRN"];
+    pool1["Max Pooling 3k 2s"];
+    conv2["Conv 5k 1s 2p 256c + ReLU + LRN"];
+    pool2["Max Pooling 3k 2s"];
+    conv3["Conv 3k 1s 1p 384c + ReLU"];
+    conv4["Conv 3k 1s 1p 384c + ReLU"];
+    conv5["Conv 3k 1s 1p 256c + ReLU"];
+    pool5["Max Pooling 3k 2s"];
+    fc6["fc 4096"];
+    fc7["fc 4096"];
+    fc8["fc 1000"];
     pred["ImageNet classification result"];
     image -->|"3 * 224 * 224"| conv1;
     conv1 -->|"96 * 54 * 54"| pool1;
