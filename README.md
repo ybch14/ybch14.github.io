@@ -24,7 +24,11 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
             - SSD (Single-shot MultiBox Detector, object detection without region proposals)
     - ImageNet Evolution
         - [AlexNet (The first neural network for ImageNet classification, ILSVRC 12 winner)](ImageNet_evolution/AlexNet.md)
-        - [GoogLeNet (ILSVRC 14 winner)](ImageNet_evolution/GoogLeNet.md)
+        - [GoogLeNet (ILSVRC 14 winner, Inception v1)](ImageNet_evolution/GoogLeNet.md)
+            - [Inception v2 (Inception + BN)](Image_evolution/Inception-v2.md)
+            - Inception v3 (Inception + Factorization)
+            - Inception v4 
+            - Inception-ResNet v2
         - VGGNet (ILSVRC 14 second winner)
         - ResNet (ILSVRC 15 winner, COCO 15 winner)
         - ResNeXt (Combined version of ResNet and Inception)
