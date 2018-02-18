@@ -218,7 +218,7 @@ function ClickShowButton()
     inception_b4_3x3_b1 --> |"192*15*15"| inception_b4_3x3_b2;
     inception_b4_pool --> |"576*15*15"| inception_b4_pool_proj;
     inception_b4_1x1 --> |"192*15*15"| inception_b4_output;
-    inception_b4_3x3_a --> |192*15*15"| inception_b4_output;
+    inception_b4_3x3_a --> |"192*15*15"| inception_b4_output;
     inception_b4_3x3_b2 --> |"192*15*15"| inception_b4_output;
     inception_b4_pool_proj --> |"96*15*15"| inception_b4_output;
     inception_b4_output --> |"576*15*15"| reduction_b_3x3_a_reduce;
@@ -239,7 +239,7 @@ function ClickShowButton()
     inception_c1_3x3_b1 --> |"224*8*8"| inception_c1_3x3_b2;
     inception_c1_pool --> |"1024*8*8"| inception_c1_pool_proj;
     inception_c1_1x1 --> |"352*8*8"| inception_c1_output;
-    inception_c1_3x3_a --> |320*8*8"| inception_c1_output;
+    inception_c1_3x3_a --> |"320*8*8"| inception_c1_output;
     inception_c1_3x3_b2 --> |"224*8*8"| inception_c1_output;
     inception_c1_pool_proj --> |"128*8*8"| inception_c1_output;
     inception_c1_output --> |"1024*8*8"| inception_c2_1x1;
@@ -251,7 +251,7 @@ function ClickShowButton()
     inception_c2_3x3_b1 --> |"224*8*8"| inception_c2_3x3_b2;
     inception_c2_pool --> |"1024*8*8"| inception_c2_pool_proj;
     inception_c2_1x1 --> |"352*8*8"| inception_c2_output;
-    inception_c2_3x3_a --> |320*8*8"| inception_c2_output;
+    inception_c2_3x3_a --> |"320*8*8"| inception_c2_output;
     inception_c2_3x3_b2 --> |"224*8*8"| inception_c2_output;
     inception_c2_pool_proj --> |"128*8*8"| inception_c2_output;
     inception_c2_output --> |"1024*8*8"| pool3;
