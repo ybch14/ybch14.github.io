@@ -25,8 +25,8 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
     - ImageNet Evolution
         - [AlexNet (The first neural network for ImageNet classification, ILSVRC 12 winner)](ImageNet_evolution/AlexNet.md)
         - [GoogLeNet (ILSVRC 14 winner, Inception v1)](ImageNet_evolution/GoogLeNet.md)
-            - [Inception v2 (Inception + BN)](Image_evolution/Inception-v2.md)
-            - Inception v3 (Inception + Factorization)
+            - [Inception v2 (Inception + BN)](ImageNet_evolution/Inception-v2.md)
+            - [Inception v3 (Inception + Factorization)](ImageNet_evolution/Inception-v3.md)
             - Inception v4 
             - Inception-ResNet v2
         - VGGNet (ILSVRC 14 second winner)
