@@ -64,7 +64,7 @@ function ClickShowButton()
     inception_a2_pool["AvgPool k=3 p=1"];
     inception_a2_pool_proj["Conv k=1 BN ReLU"];
     inception_a2_output["DepthConcat"];
-    reduction_a_3x3_reduce["Conv k=1 BN ReLU"];
+    reduction_a_3x3_a_reduce["Conv k=1 BN ReLU"];
     reduction_a_3x3_a["Conv k=3 s=2 p=1 BN ReLU"];
     reduction_a_3x3_b_reduce["Conv k=1 BN ReLU"];
     reduction_a_3x3_b1["Conv k=3 p=1 BN ReLU"];
@@ -107,7 +107,7 @@ function ClickShowButton()
     inception_b4_pool["AvgPool k=3 p=1"];
     inception_b4_pool_proj["Conv k=1 BN ReLU"];
     inception_b4_output["DepthConcat"];
-    reduction_b_3x3_reduce["Conv k=1 BN ReLU"];
+    reduction_b_3x3_a_reduce["Conv k=1 BN ReLU"];
     reduction_b_3x3_a["Conv k=3 s=2 p=1 BN ReLU"];
     reduction_b_3x3_b_reduce["Conv k=1 BN ReLU"];
     reduction_b_3x3_b1["Conv k=3 p=1 BN ReLU"];
