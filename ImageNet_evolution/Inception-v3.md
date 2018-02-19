@@ -311,7 +311,7 @@ classifier["softmax classification"];
 image --> |"3*299*299"| conv3x3_1;
 conv3x3_1 --> |"32*149*149"| conv3x3_2;
 conv3x3_2 --> |"32*147*147"| conv3x3_3;
-conv3x3_3 --> |"64*147*147"| pool3x3;
+conv3x3_3 --> |"64*147*147"| pool1;
 pool1 --> |"64*73*73"| conv3x3_4_reduce;
 conv3x3_4_reduce --> |"80*73*73"| conv3x3_4;
 conv3x3_4 --> |"192*71*71"| pool2;
