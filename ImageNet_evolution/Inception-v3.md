@@ -455,7 +455,7 @@ module1_3_output --> |"288*35*35"| reduction_a_conv3x3;
 module1_3_output --> |"288*35*35"| reduction_a_conv3x3_a_reduce;
 module1_3_output --> |"288*35*35"| reduction_a_pool3x3;
 reduction_a_conv3x3_a_reduce --> |"64*35*35"| reduction_a_conv3x3_a1;
-reduction_a_conv3x3_a1 --> |"93*35*35"| reduction_a_conv3x3_a2;
+reduction_a_conv3x3_a1 --> |"96*35*35"| reduction_a_conv3x3_a2;
 reduction_a_conv3x3 --> |"384*17*17"| reduction_a_output;
 reduction_a_conv3x3_a2 --> |"96*17*17"| reduction_a_output;
 reduction_a_pool3x3 --> |"288*17*17"| reduction_a_output;
