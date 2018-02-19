@@ -60,13 +60,14 @@ conv3x3_a_reduce --> conv3x3_a;
 conv3x3_b_reduce --> conv3x3_b1;
 conv3x3_b1 --> conv3x3_b2;
 pool3x3 --> conv1x1_pool_proj;
+conv1x1 --> output;
 conv3x3_a --> output;
 conv3x3_b2 --> output;
 conv1x1_pool_proj --> output;
 </div>
 </center>
 
-### n x n 分解 （In）
+### n x n 分解 （Inception Module 2）
 
 - 将 $n\times n$ 卷积分解成 $1\times n$ 和 $n\times 1$ 的卷积。这种 Inception 模块作用于 $17 \times 17$ 的特征图上，$n=7$。
 
@@ -126,6 +127,7 @@ convnxn_b1_1xn --> convnxn_b1_nx1;
 convnxn_b1_nx1 --> convnxn_b2_1xn;
 convnxn_b2_1xn --> convnxn_b2_nx1;
 pool3x3 --> conv1x1_pool_proj;
+conv1x1 --> output;
 convnxn_a_nx1 --> output;
 convnxn_b2_nx1 --> output;
 conv1x1_pool_proj --> output;
