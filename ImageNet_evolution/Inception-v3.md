@@ -520,7 +520,7 @@ module2_4_convnxn_a_nx1 --> |"192*17*17"| module2_4_output;
 module2_4_convnxn_b2_nx1 --> |"192*17*17"| module2_4_output;
 module2_4_conv1x1_pool_proj --> |"192*17*17"| module2_4_output;
 module2_4_output --> |"768*17*17"| reduction_b_conv3x3_a_reduce;
-module2_4_output --> |"768*17*17"| reduction_b_conv3x3_b_reduce;
+module2_4_output --> |"768*17*17"| reduction_b_conv1x7_b_reduce;
 module2_4_output --> |"768*17*17"| reduction_b_pool3x3;
 reduction_b_conv3x3_a_reduce --> |"192*17*17"| reduction_b_conv3x3_a;
 reduction_b_conv1x7_b_reduce --> |"192*17*17"| reduction_b_conv1x7;
