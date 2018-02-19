@@ -225,7 +225,7 @@ function ClickShowButton4()
     }
 }
 </script>
-<center><button class="button show" id="show-button-reduction" onclick="ClickShowButton3()">
+<center><button class="button show" id="show-button-reduction" onclick="ClickShowButton4()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
@@ -416,7 +416,7 @@ pool1 --> |"64*73*73"| conv3x3_4_reduce;
 conv3x3_4_reduce --> |"80*73*73"| conv3x3_4;
 conv3x3_4 --> |"192*71*71"| pool2;
 pool2 --> |"192*35*35"| module1_1_conv1x1;
-pool2 --> |"192*35*35"| module1_1_conv3x3_a_reduce;
+pool2 --> |"192*35*35"| module1_1_conv5x5_a_reduce;
 pool2 --> |"192*35*35"| module1_1_conv3x3_b_reduce;
 pool2 --> |"192*35*35"| module1_1_pool3x3;
 module1_1_conv5x5_a_reduce --> |"48*35*35"| module1_1_conv5x5_a;
@@ -519,8 +519,8 @@ module2_4_conv1x1 --> |"192*17*17"| module2_4_output;
 module2_4_convnxn_a_nx1 --> |"192*17*17"| module2_4_output;
 module2_4_convnxn_b2_nx1 --> |"192*17*17"| module2_4_output;
 module2_4_conv1x1_pool_proj --> |"192*17*17"| module2_4_output;
-module2_4_output --> |"768*17*17"| reduction_b_conv3x3;
 module2_4_output --> |"768*17*17"| reduction_b_conv3x3_a_reduce;
+module2_4_output --> |"768*17*17"| reduction_b_conv3x3_b_reduce;
 module2_4_output --> |"768*17*17"| reduction_b_pool3x3;
 reduction_b_conv3x3_a_reduce --> |"192*17*17"| reduction_b_conv3x3_a;
 reduction_b_conv1x7_b_reduce --> |"192*17*17"| reduction_b_conv1x7;
