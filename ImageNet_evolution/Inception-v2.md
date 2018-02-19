@@ -1,11 +1,9 @@
 # Inception v2
 
-### 较 Inception v1 改进
-
 - 加入 Batch Normalization，减少 Internal Covariate Shift。
 - 用两个连续的 $3 \times 3$ 卷积代替 v1 中的 $5 \times 5$ 卷积，既降低参数量，又加速计算
 
-### Inception v2 GoogLeNet 结构
+### Inception v2 结构
 
 <script type="text/javascript" src="../js/mermaid.js"></script>
 <script type="text/javascript">
@@ -258,6 +256,15 @@ function ClickShowButton()
     pool3 --> |"1024"| classifier;
 </div>
 </center>
+
+### 实验结果
+
+|Model|Resolution|Crops|Models|Top-1 error|Top-5 error|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|GoogLeNet ensemble|224|144|7|-|6.67%|
+|BN-Inception single crop|224|1|1|25.2%|7.82%|
+|BN-Inception multicrop|224|144|1|21.99%|5.82%|
+|**BN-Inception ensemble**|**224**|**144**|**6**|**20.1%**|**4.9%**|
 
 ### 参考文献
 

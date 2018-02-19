@@ -1,8 +1,6 @@
 # Inception v3
 
-### 改进
-
-- 引入分解的思想，将 $k \times k$ 卷积分解成 $1 \times k + k \times 1$ 的卷积，既可以加速计算，又可以增加网络深度，提高非线性。
+引入分解的思想，将 $k \times k$ 卷积分解成 $1 \times k + k \times 1$ 的卷积，既可以加速计算，又可以增加网络深度，提高非线性。
 
 ### Inception 模块
 
@@ -198,58 +196,6 @@ conv3x3_a_3x1 --> output;
 conv3x3_b2_1x3 --> output;
 conv3x3_b2_3x1 --> output;
 conv1x1_pool_proj --> output;
-</div>
-</center>
-
-### Reduction 模块
-
-<script type="text/javascript" src="../js/mermaid.js"></script>
-<script type="text/javascript">
-mermaid.initialize({startOnLoad:true});
-</script>
-<script type="text/javascript">
-var is_show = true;
-function ClickShowButton4()
-{
-    if (is_show == false)
-    {
-        document.getElementById('reduction-graph').style.display = "block";
-        document.getElementById('show-button-reduction').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
-        is_show = true;
-    }
-    else
-    {
-        document.getElementById('reduction-graph').style.display = "none";
-        document.getElementById('show-button-reduction').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Show Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
-        is_show = false;
-    }
-}
-</script>
-<center><button class="button show" id="show-button-reduction" onclick="ClickShowButton4()">
-<span id="button-left">
-<i class="demo-icon icon-sitemap"></i> Hide Network
-</span>
-<span id="button-right">
-<i class="demo-icon icon-down-open"></i>
-</span></button></center>
-<center>
-<div class="mermaid" id="reduction-graph" style="display: block">
-graph TD;
-base["base"];
-conv3x3["Conv k=3 s=2 BN ReLU"];
-conv3x3_a_reduce["Conv k=1 BN ReLU"];
-conv3x3_a1["Conv k=3 p=1 BN ReLU"];
-conv3x3_a2["Conv k=3 s=2 BN ReLU"];
-pool3x3["MaxPool k=3 s=2"];
-output["DepthConcat"];
-base --> conv3x3;
-base --> conv3x3_a_reduce;
-base --> pool3x3;
-conv3x3_a_reduce --> conv3x3_a1;
-conv3x3_a1 --> conv3x3_a2;
-conv3x3 --> output;
-conv3x3_a2 --> output;
-pool3x3 --> output;
 </div>
 </center>
 
@@ -565,6 +511,21 @@ module3_2_output --> |"2048*8*8"| pool3;
 pool3 --> |"2048"|classifier;
 </div>
 </center>
+
+### 实验结果
+
+- ILSVRC 2012 上的单模型结果对比
+
+|Network|Crops|Top-5 error|Top-1 error|
+|:-:|:-:|:-:|:-:|
+|GoogLeNet|10|-|9.15%|
+|GoogLeNet|144|-|7.89%|
+|VGG|-|24.4%|6.8%|
+|Inception-v2|144|22%|5.82%|
+|PReLU|10|24.27%|7.38%|
+|PReLU|-|21.59%|5.71%|
+|Inception-v3|12|19.47%|4.48%|
+|**Inception-v3**|**144**|**18.77%**|**4.2%**|
 
 ### 参考文献
 
