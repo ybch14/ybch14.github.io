@@ -54,7 +54,7 @@ inception_b --> |"1152*17*17"| reduction_b;
 reduction_b --> |"2144*8*8"| inception_c;
 inception_c --> |"2144*8*8"| pool;
 pool --> |"2144"| dropout;
-pool --> |"2144"| classifier;
+dropout --> |"2144"| classifier;
 </div>
 </center>
 
@@ -444,3 +444,8 @@ bn --> |"2144*8*8"| output;
 |Inception-v4|144|17.7%|3.8%|
 |Inception-ResNet-v1|144|18.8%|4.3%|
 |Inception-ResNet-v2|144|17.8%|3.7%|
+
+### 参考文献
+
+1. Szegedy, C., Ioe, S., Vanhoucke, V.: Inception-v4, inception-resnet and the impact
+of residual connections on learning. arXiv:1602.07261 (2016)

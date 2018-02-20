@@ -55,7 +55,7 @@ inception_b --> |"1024*17*17"| reduction_b;
 reduction_b --> |"1536*8*8"| inception_c;
 inception_c --> |"1536*8*8"| pool;
 pool --> |"1536"| dropout;
-pool --> |"1536"| classifier;
+dropout --> |"1536"| classifier;
 </div>
 </center>
 
@@ -434,10 +434,13 @@ output["Output"];
 input --> |"1024*17*17"| conv_3x3_a_reduce;
 conv_3x3_a_reduce --> |"192*17*17"| conv_3x3_a;
 conv_3x3_a --> |"192*8*8"| concat;
+input --> |"1024*17*17"| conv_3x3_b_reduce;
 conv_3x3_b_reduce --> |"256*17*17"| conv_1x7_b;
 conv_1x7_b --> |"256*17*17"| conv_7x1_b;
 conv_7x1_b --> |"320*17*17"| conv_3x3_b;
 conv_3x3_b --> |"320*8*8"| concat;
+input --> |"1024*17*17"| pool;
+pool --> |"1024*8*8"| concat;
 concat --> |"1536*8*8"| output;
 </div>
 </center>
@@ -451,3 +454,8 @@ concat --> |"1536*8*8"| output;
 |ResNet-151|dense|19.4%|4.5%|
 |Inception-v3|144|18.9%|4.3%|
 |Inception-v4|144|17.7%|3.8%|
+
+### 参考文献
+
+1. Szegedy, C., Ioe, S., Vanhoucke, V.: Inception-v4, inception-resnet and the impact
+of residual connections on learning. arXiv:1602.07261 (2016)
