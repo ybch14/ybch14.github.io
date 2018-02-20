@@ -168,7 +168,6 @@ function ClickShowButtonA()
 <center>
 <div class="mermaid" id="inception-a-graph" style="display: block">
 graph TD;
-graph TD;
 base["Input"];
 conv1x1["Conv k=1 BN ReLU"];
 conv3x3_a_reduce["Conv k=1 BN ReLU"];
@@ -322,12 +321,13 @@ conv3x3_b1_1x3 --> |"448*8*8"| conv3x3_b1_3x1;
 conv3x3_b1_3x1 --> |"512*8*8"| conv3x3_b2_1x3;
 conv3x3_b1_3x1 --> |"512*8*8"| conv3x3_b2_3x1;
 pool3x3 --> |"1536*8*8"| conv1x1_pool_proj;
-conv1x1 --> |"256*8*8"| output;
-conv3x3_a_1x3 --> |"256*8*8"| output;
-conv3x3_a_3x1 --> |"256*8*8"| output;
-conv3x3_b2_1x3 --> |"256*8*8"| output;
-conv3x3_b2_3x1 --> |"256*8*8"| output;
-conv1x1_pool_proj --> |"256*8*8"| output;
+conv1x1 --> |"256*8*8"| concat;
+conv3x3_a_1x3 --> |"256*8*8"| concat;
+conv3x3_a_3x1 --> |"256*8*8"| concat;
+conv3x3_b2_1x3 --> |"256*8*8"| concat;
+conv3x3_b2_3x1 --> |"256*8*8"| concat;
+conv1x1_pool_proj --> |"256*8*8"| concat;
+concat --> |"1024*8*8"| output;
 </div>
 </center>
 
