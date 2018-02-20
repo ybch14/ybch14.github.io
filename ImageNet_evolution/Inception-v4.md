@@ -327,7 +327,116 @@ conv3x3_a_3x1 --> |"256*8*8"| concat;
 conv3x3_b2_1x3 --> |"256*8*8"| concat;
 conv3x3_b2_3x1 --> |"256*8*8"| concat;
 conv1x1_pool_proj --> |"256*8*8"| concat;
-concat --> |"1024*8*8"| output;
+concat --> |"1536*8*8"| output;
+</div>
+</center>
+
+- Reduction A
+
+<script type="text/javascript" src="../js/mermaid.js"></script>
+<script type="text/javascript">
+mermaid.initialize({startOnLoad:true});
+</script>
+<script type="text/javascript">
+var is_show = true;
+function ClickShowButtonRA()
+{
+    if (is_show == false)
+    {
+        document.getElementById('reduction-a-graph').style.display = "block";
+        document.getElementById('show-button-reduction-a').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
+        is_show = true;
+    }
+    else
+    {
+        document.getElementById('reduction-a-graph').style.display = "none";
+        document.getElementById('show-button-reduction-a').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Show Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
+        is_show = false;
+    }
+}
+</script>
+<center><button class="button show" id="show-button-reduction-a" onclick="ClickShowButtonRA()">
+<span id="button-left">
+<i class="demo-icon icon-sitemap"></i> Hide Network
+</span>
+<span id="button-right">
+<i class="demo-icon icon-down-open"></i>
+</span></button></center>
+<center>
+<div class="mermaid" id="reduction-a-graph" style="display: block">
+graph TD;
+input["Input"];
+conv_3x3_a["Conv k=3 s=2 BN ReLU"];
+conv_3x3_b_reduce["Conv k=1 BN ReLU"];
+conv_3x3_b1["Conv k=3 p=1 BN ReLU"];
+conv_3x3_b2["Conv k=3 s=2 BN ReLU"];
+pool["MaxPool k=3 s=2"];
+concat["DepthConcat"];
+output["Output"];
+input --> |"384*35*35"| conv_3x3_a;
+input --> |"384*35*35"| conv_3x3_b_reduce;
+input --> |"384*35*35"| pool;
+pool --> |"384*17*17"| concat;
+conv_3x3_a --> |"384*17*17"| concat;
+conv_3x3_b_reduce --> |"192*35*35"| conv_3x3_b1;
+conv_3x3_b1 --> |"224*35*35"| conv_3x3_b2;
+conv_3x3_b2 --> |"256*17*17"| concat;
+concat --> |"1024*17*17"| output;
+</div>
+</center>
+
+- Reduction B
+
+<script type="text/javascript" src="../js/mermaid.js"></script>
+<script type="text/javascript">
+mermaid.initialize({startOnLoad:true});
+</script>
+<script type="text/javascript">
+var is_show = true;
+function ClickShowButtonRB()
+{
+    if (is_show == false)
+    {
+        document.getElementById('reduction-b-graph').style.display = "block";
+        document.getElementById('show-button-reduction-b').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Hide Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
+        is_show = true;
+    }
+    else
+    {
+        document.getElementById('reduction-b-graph').style.display = "none";
+        document.getElementById('show-button-reduction-b').innerHTML = "<span id=\"button-left\"><i class=\"demo-icon icon-sitemap\"></i> Show Network</span><span id=\"button-right\"><i class=\"demo-icon icon-down-open\"></i></span></button></center></center>";
+        is_show = false;
+    }
+}
+</script>
+<center><button class="button show" id="show-button-reduction-b" onclick="ClickShowButtonRB()">
+<span id="button-left">
+<i class="demo-icon icon-sitemap"></i> Hide Network
+</span>
+<span id="button-right">
+<i class="demo-icon icon-down-open"></i>
+</span></button></center>
+<center>
+<div class="mermaid" id="reduction-b-graph" style="display: block">
+graph TD;
+input["Input"];
+conv_3x3_a_reduce["Conv k=1 BN ReLU"];
+conv_3x3_a["Conv k=3 s=2 BN ReLU"];
+conv_3x3_b_reduce["Conv k=1 BN ReLU"];
+conv_1x7_b["Conv k=[1,7] p=[0,3] BN ReLU"];
+conv_7x1_b["Conv k=[7,1] p=[3,0] BN ReLU"];
+conv_3x3_b["Conv k=3 s=3 BN ReLU"];
+pool["MaxPool k=3 s=2"];
+concat["DepthConcat"];
+output["Output"];
+input --> |"1024*17*17"| conv_3x3_a_reduce;
+conv_3x3_a_reduce --> |"192*17*17"| conv_3x3_a;
+conv_3x3_a --> |"192*8*8"| concat;
+conv_3x3_b_reduce --> |"256*17*17"| conv_1x7_b;
+conv_1x7_b --> |"256*17*17"| conv_7x1_b;
+conv_7x1_b --> |"320*17*17"| conv_3x3_b;
+conv_3x3_b --> |"320*8*8"| concat;
+concat --> |"1536*8*8"| output;
 </div>
 </center>
 
