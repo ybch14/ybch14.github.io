@@ -29,7 +29,7 @@ I'm an undergraduate student at Department of Electronic Engineering, Tsinghua U
             - [Inception v3 (Inception + Factorization)](ImageNet_evolution/Inception-v3.md)
             - [Inception v4 (Optimized Inception v3)](ImageNet_evolution/Inception-v4.md)
             - [Inception-ResNet v1 (Inception + Residual Connection)](ImageNet_evolution/Inception-ResNet-v1.md)
-            - Inception-ResNet v2
+            - [Inception-ResNet v2 (Larger Inception-ResNet v1)](ImageNet_evolution/Inception-ResNet-v2.md)
         - VGGNet (ILSVRC 14 second winner)
         - ResNet (ILSVRC 15 winner, COCO 15 winner)
         - ResNeXt (Combined version of ResNet and Inception)
