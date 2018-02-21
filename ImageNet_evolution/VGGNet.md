@@ -20,7 +20,7 @@ mermaid.initialize({startOnLoad:true});
 </script>
 <script type="text/javascript">
 var is_show = true;
-function ClickShowButton()
+function ClickShowButton16()
 {
     if (is_show == false)
     {
@@ -36,7 +36,7 @@ function ClickShowButton()
     }
 }
 </script>
-<center><button class="button show" id="show-button-vgg-16" onclick="ClickShowButton()">
+<center><button class="button show" id="show-button-vgg-16" onclick="ClickShowButton16()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
@@ -100,7 +100,7 @@ mermaid.initialize({startOnLoad:true});
 </script>
 <script type="text/javascript">
 var is_show = true;
-function ClickShowButton()
+function ClickShowButton19()
 {
     if (is_show == false)
     {
@@ -116,7 +116,7 @@ function ClickShowButton()
     }
 }
 </script>
-<center><button class="button show" id="show-button-vgg-19" onclick="ClickShowButton()">
+<center><button class="button show" id="show-button-vgg-19" onclick="ClickShowButton19()">
 <span id="button-left">
 <i class="demo-icon icon-sitemap"></i> Hide Network
 </span>
