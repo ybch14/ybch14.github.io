@@ -37,13 +37,13 @@ function ClickShowButton()
 <div class="mermaid" id="mermaid-graph" style="display: block">
     graph TD;
     image["Image"];
-    conv1["Conv k=11 s=4 c=96 + ReLU + LRN"];
+    conv1["Conv k=11 s=4 LRN ReLU"];
     pool1["Max Pooling k=3 s=2"];
-    conv2["Conv k=5 p=2 c=256 + ReLU + LRN"];
+    conv2["Conv k=5 p=2 LRN ReLU"];
     pool2["Max Pooling k=3 s=2"];
-    conv3["Conv k=3 p=1 c=384 + ReLU"];
-    conv4["Conv k=3 p=1 c=384 + ReLU"];
-    conv5["Conv k=3 p=1 c=256 + ReLU"];
+    conv3["Conv k=3 p=1 ReLU"];
+    conv4["Conv k=3 p=1 ReLU"];
+    conv5["Conv k=3 p=1 ReLU"];
     pool5["Max Pooling k=3 s=2"];
     fc6["fc 4096"];
     fc7["fc 4096"];
