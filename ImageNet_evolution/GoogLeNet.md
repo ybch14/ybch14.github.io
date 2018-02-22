@@ -160,6 +160,7 @@ function ClickShowButton3()
 <div class="mermaid" id="googlenet-graph" style="display: block">
     graph TD;
     image["image"];
+    subgraph stem
     conv1["Conv k=7 s=2 p=3"];
     pool1["MaxPool k=3 s=2"];
     lrn1["LRN"];
@@ -167,6 +168,8 @@ function ClickShowButton3()
     conv2_2["Conv k=3 p=1"];
     lrn2["LRN"];
     pool2["MaxPool k=3 s=2"];
+    end
+    subgraph inception1
     inception1_conv1_1x1["Conv k=1"];
     inception1_conv2_1x1["Conv k=1"];
     inception1_conv3_1x1["Conv k=1"];
@@ -175,6 +178,7 @@ function ClickShowButton3()
     inception1_conv5x5["Conv k=5 p=2"];
     inception1_pool3x3["MaxPool k=3 p=1"];
     inception1_concat["DepthConcat"];
+    end
     inception2_conv1_1x1["Conv k=1"];
     inception2_conv2_1x1["Conv k=1"];
     inception2_conv3_1x1["Conv k=1"];
