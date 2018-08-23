@@ -56,7 +56,7 @@ I'm a starting Ph.D. student at THU-NGNLAB, Dept. of E.E., Tsinghua University, 
     - Knowledge Graph
         - Knowledge Graph Embedding
 - Recommender System 
-    - Deep Learning Methods Survey
+    - [Deep Learning Methods Survey](RS_survey/survey.md)
 
 ## TODO
 
