@@ -22,7 +22,7 @@
 - 简单模型（只用一种网络结构）v.s. 组合模型（用多种网络结构）。
 - 集成深度学习模型与传统模型 v.s. 只用深度学习模型
 
-## 近年最受关注的工作
+## Recent Works
 
 - [Restricted Boltzmann Machines for collaborative filtering](https://www.cs.toronto.edu/~rsalakhu/papers/rbmcf.pdf)
 - [Deep content-based music recommendation](https://papers.nips.cc/paper/5004-deep-content-based-music-recommendation.pdf)
@@ -37,7 +37,7 @@
 - [Wide & deep learning for recommender systems](https://arxiv.org/pdf/1606.07792.pdf)
 - [Visual Bayesian Personalized Ranking from Implicit Feedback](https://cseweb.ucsd.edu/~jmcauley/pdfs/aaai16.pdf)
 
-## 基于深度学习的推荐系统
+## DL-based-RS
 
 ### 基于 MLP
 
@@ -59,6 +59,8 @@
 ### 单纯使用 AutoEncoder
 
 - [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。整体模型可以分成用户的 AutoRec (U-AutoRec) 和产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是
+
 $$\operatorname*{argmin}_\theta \sum_{i=1}^{N}||\mathbf{\mathrm{r}}^{(i)} - h(\mathbf{\mathrm{r}}^{(i)}; \theta)||^2 + \lambda\cdot Regularization.$$
+
 
 
