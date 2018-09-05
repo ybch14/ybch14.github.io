@@ -47,3 +47,18 @@
 - [Cross-domain Content-boosted Collaborative Filtering neural Network (CCCFNet)](https://pdfs.semanticscholar.org/9967/5f860615cbe8c2df0b537473371ce3cb35ea.pdf). 同样是一对神经网络的结构。用户对应一个神经网络，包括协同过滤因子和用户画像表征。产品对应一个神经网络，包括协同过滤因子和产品特征表征。
 - [Wide & Deep Learning](https://arxiv.org/pdf/1606.07792.pdf). 深度学习的部分就是一个多层感知机。宽度学习的部分就是一个单层感知机（也可以看作一个广义线性模型）。这两种技术的结合使得推荐系统能够同时获取记忆能力和泛化能力。记忆能力体现在宽度学习上，可以直接从历史数据中获取信息；泛化能力体现在深度学习上，可以提取更加概括性的特征。然而在应用这项技术的时候，为深度学习和宽度学习选择合适的特征是很重要的一步。也就是说，哪些特征需要记忆、哪些特征需要泛化需要由人来决定。这一步会影响最终的推荐系统的效果。[DeepFM](https://arxiv.org/pdf/1703.04247.pdf) 的提出就是为了减少选择特征的工作量。
 - [DeepFM](https://arxiv.org/pdf/1703.04247.pdf). 这项工作把 Factorization Machine 和 MLP 结合在了一起。它用神经网络对高阶的特征相互作用进行建模，用 Factorization Machine 对低阶的相互作用进行建模。两种机制结合的方式和 Wide & Deep Learning 相同。相比于 Wide & Deep Learning，DeepFM 把宽度学习的部分用 Factorization Machine 代替。
+
+### 结合MLP与传统方法
+
+- 注意性协同过滤：[Chen等人](https://www.comp.nus.edu.sg/~xiangnan/papers/sigir17-AttentiveCF.pdf)在隐因子模型上引入了两层注意，包括产品级别的注意和辅助信息级别的注意。产品级别的注意用于选择最能表征用户喜好的部分产品，辅助信息级别的注意用于从各种多媒体辅助信息中选择最重要的部分。[Alashkar等人](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14773/13865)针对化妆推荐提出了一个基于MLP的模型。这项工作用两个相同的MLP对标注样例和专家经验进行学习，两者的参数同时更新，更新目标是使得两个MLP的输出差别最小。这项工作证明在推荐系统中引入专家经验能帮助引导学习过程。[Covingtom等人](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45530.pdf)在Youtube推荐系统中使用了MLP。这项工作把此产品推荐分成了候选商品生成和候选商品排序两个步骤。候选商品生成从所有Youtube视频中找到数百个候选视频，之后排序模块对这些视频进行排序，生成Top-N推荐列表。
+
+## 基于 AutoEncoder
+
+在推荐系统中使用 AutoEncoder 主要有两种思路：用 AE 学习低维的特征向量（AE的瓶颈层）；直接用 AE 的重建层填补 rating 矩阵中的空白。
+
+### 单纯使用 AutoEncoder
+
+- [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。整体模型可以分成用户的 AutoRec (U-AutoRec) 和产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是
+$$\operatorname*{argmin}_\theta \sum_{i=1}^{N}||\mathbf{\mathrm{r}}^{(i)} - h(\mathbf{\mathrm{r}}^{(i)}; \theta)||^2 + \lambda\cdot Regularization.$$
+
+
