@@ -58,10 +58,6 @@
 
 ### 单纯使用 AutoEncoder
 
-- [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。该模型有两个变种：基于用户的 AutoRec (U-AutoRec) 和基于产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是
-
-$$\operatorname*{argmin}_\theta \sum_{i=1}^{N}||\mathbf{\mathrm{r}}^{(i)} - h(\mathbf{\mathrm{r}}^{(i)}; \theta)||^2 + \lambda\cdot Regularization.$$
-
-在使用 AutoRec 的时候需要注意：（1）I-AutoRec 比 U-AutoRec 效果好，可能因为用户向量的变化性比较大；（2）AE 中两个层的激活函数的不同组合会明显影响性能；（3）适当增加隐藏层维度可以提升性能；（4）堆叠更多的层形成更深的网络也可以提升性能。
-
-- [Collaborative Filtering Neural Network (CFN)](https://arxiv.org/pdf/1606.07659.pdf):
+- [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。该模型有两个变种：基于用户的 AutoRec (U-AutoRec) 和基于产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是让 $|\mathbf{\mathrm{r}}^{(i)}$ 和 $h(\mathbf{\mathrm{r}}^{(i)}; \theta)$ 尽可能地接近。在使用 AutoRec 的时候需要注意：（1）I-AutoRec 比 U-AutoRec 效果好，可能因为用户向量的变化性比较大；（2）AE 中两个层的激活函数的不同组合会明显影响性能；（3）适当增加隐藏层维度可以提升性能；（4）堆叠更多的层形成更深的网络也可以提升性能。
+- [Collaborative Filtering Neural Network (CFN)](https://arxiv.org/pdf/1606.07659.pdf): AutoRec 的扩展。它采用噪声抑制技术，增强鲁棒性；它引入外部信息（用户画像、产品描述等）解决稀疏性和冷启动问题。CFN 的输入也是部分观察向量，因此也有两个变种：I-CFN 和 U-CFN。为了更好地处理输入向量中的遗失部分，作者在输入中加入了噪声干扰（作为较强的规范项）。更进一步，CFN 在 AE 的每一层中都加入了外部信息的辅助。外部信息的引入提高预测精度，加快训练进程，提高鲁棒性。
+- [Autoencoder-based Collaborative Filtering (ACF)](https://link.springer.com/chapter/10.1007/978-3-319-12643-2_35): 
