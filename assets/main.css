@@ -279,3 +279,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-article-content a:hover, .offcanvas a:focus {
     color: #b5e853;
 }
+
+#content li {
+    margin-left: -20px;
+}
