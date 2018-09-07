@@ -792,13 +792,13 @@ a {
 
 .main-article-content a {
   @include large {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
   @include medium {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
   @include small {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 }
 
