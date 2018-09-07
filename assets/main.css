@@ -59,6 +59,7 @@
 
 .top-bar li {
     float: left;
+    margin-left: 0px;
 }
 
 .top-bar li:last-child {
