@@ -58,7 +58,7 @@
 
 ### 单纯使用 AE
 
-- [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。该模型有两个变种：基于用户的 AutoRec (U-AutoRec) 和基于产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是让 $|\mathbf{\mathrm{r}}^{(i)}$ 和 $h(\mathbf{\mathrm{r}}^{(i)}; \theta)$ 尽可能地接近。在使用 AutoRec 的时候需要注意：（1）I-AutoRec 比 U-AutoRec 效果好，可能因为用户向量的变化性比较大；（2）AE 中两个层的激活函数的不同组合会明显影响性能；（3）适当增加隐藏层维度可以提升性能；（4）堆叠更多的层形成更深的网络也可以提升性能。
+- [AutoRec](http://users.cecs.anu.edu.au/~u5098633/papers/www15.pdf): AutoRec 以用户和产品的部分观察向量（partially observed vector）为输入，目标是在输出层对它们进行重构。该模型有两个变种：基于用户的 AutoRec (U-AutoRec) 和基于产品的 AutoRec (I-AutoRec)。以 I-AutoRec 为例，经过 AE 之后的向量可以表示为 $h(\mathbf{\mathrm{r}}^{(i)}; \theta) = f(W\cdot g(V\cdot \mathbf{\mathrm{r}}^{(i)} + \mu) + b)$（$f, g$是激活函数，$\theta=\{W, V, \mu, b\}$）。I-AutoRec的优化目标就是让 $\mathbf{\mathrm{r}}^{(i)}$ 和 $h(\mathbf{\mathrm{r}}^{(i)}; \theta)$ 尽可能地接近。在使用 AutoRec 的时候需要注意：（1）I-AutoRec 比 U-AutoRec 效果好，可能因为用户向量的变化性比较大；（2）AE 中两个层的激活函数的不同组合会明显影响性能；（3）适当增加隐藏层维度可以提升性能；（4）堆叠更多的层形成更深的网络也可以提升性能。
 - [Collaborative Filtering Neural Network (CFN)](https://arxiv.org/pdf/1606.07659.pdf): AutoRec 的扩展。它采用噪声抑制技术，增强鲁棒性；它引入外部信息（用户画像、产品描述等）解决稀疏性和冷启动问题。CFN 的输入也是部分观察向量，因此也有两个变种：I-CFN 和 U-CFN。为了更好地处理输入向量中的遗失部分，作者在输入中加入了噪声干扰（作为较强的规范项）。更进一步，CFN 在 AE 的每一层中都加入了外部信息的辅助。外部信息的引入提高预测精度，加快训练进程，提高鲁棒性。
 - [Autoencoder-based Collaborative Filtering (ACF)](https://link.springer.com/chapter/10.1007/978-3-319-12643-2_35): ACF 的输入不是原始的部分向量，是按照评分等级分解的部分向量（如果评分是1-5，就分解成5个）。其优化目标是重建向量与输入向量的 MSE 最小。训练的时候用 RBM 预训练。两个问题：（1）不能预测非整数评分；（2）输入向量的分解增加稀疏性，降低性能。
 - [Collaborative Denoising Auto-Encoder (CDAE)](http://alicezheng.org/papers/wsdm16-cdae.pdf): 为 Ranking 任务设计的模型。CDAE的输入是用户的隐式反馈部分观察向量（partial observed implicit feedback），其中如果用户喜欢该产品，该产品对应的向量值为1，否则为0。输入向量也可以看作用户的偏好向量。另外，除了经过噪声干扰的偏好向量，AE 的输入还包括用户的权重矩阵。加入用户的权重之后性能有很大的提升。另外，由于现实应用中数据规模过大，因此在优化过程中使用负采样技术。
@@ -67,6 +67,31 @@
 
 - [Collaborative Deep Learning (CDL)](https://arxiv.org/pdf/1409.2944.pdf): 把 SDAE (stacked denoising autoencoder) 集成到 probabilistic matrix factorization (PMF) 中。为了无缝融合两种技术，作者提出了一种通用贝叶斯深度学习框架，包括两个高度耦合的模块：感知机模块和任务专用模块。在 CDL 中 SDAE 充当感知机模块，PMF 充当任务专用模块。这样的组合使得 CDL 可以平衡侧面信息和评分信息的作用。CDL的一个扩展是 CVAE (collaborative variational autoencoder)，用一个 VAE 代替了 CDL 中的 SDAE。CVAE 可以从内容信息中学习隐变量，可以很容易地利用多媒体数据。
 - [Collaborative Deep Ranking (CDL)](https://link.springer.com/chapter/10.1007/978-3-319-31750-2_44): 相比于为评分预测任务设计的 CDL，CDR 是专门给排序推荐任务设计的模型，采用的是一对对称的网络模型。
-- [Deep Collaborative Filtering Framework](https://dl.acm.org/citation.cfm?id=2806527): 这是一个通用于协同过滤模型的深度学习方法。它将协同过滤任务建模为 $\operatorname*{argmin}_{U,V} l(R,U,V)+\beta(||U||_F^2+||V||_F^2)+\gamma L(X,U) + \delta L(Y, V)$。其中 $X,Y$ 是外部信息，$l(\cdot)$ 是协同过滤的损失函数，$L(X,U), L(Y, V)$ 是链接深度学习与协同模型、外部信息与隐式因子（latent factor）的桥梁。在此基础上，作者还提出了mDA-CF模型，相比 CDL 其计算效率和可扩展性都有提高。
+- [Deep Collaborative Filtering Framework](https://dl.acm.org/citation.cfm?id=2806527): 这是一个通用于协同过滤模型的深度学习方法。它将协同过滤任务建模为 $\operatorname*{argmin}_{U,V} l(R,U,V)+\beta(\|\|U\|\|_F^2+\|\|V\|\|_F^2)+\gamma L(X,U) + \delta L(Y, V)$。其中 $X,Y$ 是外部信息，$l(\cdot)$ 是协同过滤的损失函数，$L(X,U), L(Y, V)$ 是链接深度学习与协同模型、外部信息与隐式因子（latent factor）的桥梁。在此基础上，作者还提出了mDA-CF模型，相比 CDL 其计算效率和可扩展性都有提高。
 - [AutoSVD++](https://arxiv.org/pdf/1704.00551.pdf): 这项工作使用收缩自动编码器学习产品的特征向量，并把这些特征集成到了传统的 SVD++ 模型中。优点：（1）收缩自动编码器能够获取极其微小的输入偏差；（2）对隐式反馈进行建模，提高性能；（3）作者针对这一模型设计了专有的优化算法，能够减少训练时间。
 - [HRCD](https://ieeexplore.ieee.org/document/7588947): 这项工作是一个混合协同模型，主要基于 autoencoder 和 timeSVD++。这项工作利用到了时间信息，用 SDAE 学习产品特征，目的是解决冷启动问题。
+
+## 基于 CNN
+
+### 单纯基于 CNN
+
+- [Attention based CNN](https://www.ijcai.org/Proceedings/16/Papers/395.pdf): 这项工作用基于注意的 CNN 做微博的 hashtag 推荐。任务本身可以建模成一个多分类问题。该模型有两个通道，全局通道局部注意通道。全局通道包括正常的卷积核和 max-pooling 层。所有词是全局通道的输入。局部注意通道有一个注意层，用来选择一个局部窗口中有信息的词，即出发词。在接下来的层中，只有触发词发挥作用。
+- [Personalized CNN Tag Recommendation](https://link.springer.com/chapter/10.1007/978-3-319-57454-7_15): 这项工作用 CNN 获取图片中的信息。为了生成个性化推荐结果，用户信息被插入到 CNN 中。网络的优化采用 Bayesian Personalized Ranking 算法，最大化有关和无关 tag 之间的差别。
+
+### CNN + 传统
+
+- [Deep Cooperative Neural Network (DeepCoNN)](https://arxiv.org/pdf/1701.04783.pdf): 这项工作用两个平行的 CNN 从评论文本中提取特征，对用户行为和产品属性进行建模。在最后一层中，用 FM (Factorization Machine) 获取用户和产品信息的相互联系，用于进行评分预测。该模型减轻了稀疏性的问题，通过挖掘评论文本中的语义信息增强了模型的可解释性。
+- [ConvMF](http://uclab.khu.ac.kr/resources/publication/C_351.pdf): 融合了 CNN 和 PMF，融合方式与 CDL 相似。不同的是，CDL 用 AE 学习产品的特征，而 ConvMF 用 CNN 学习高层次的产品特征。ConvMF 的主要优势在于 CNN 可以提取更加精确的上下文信息。
+
+## RNN
+
+### 单纯基于 RNN
+
+- Session-based Recommendation with RNN: 在互联网上，会话和cookie机制使得推荐系统能够获取短时间内的用户偏好。[Hidasl 等人](https://arxiv.org/pdf/1511.06939.pdf)提出了一个基于会话的 GRU 推荐系统，输入是会话的 one-hot 向量，在会话中出现的产品对应的向量位为1。输出是会话中下一个产品的似然值。作者还提出了会话并行的批次训练方法以提高训练效率。[Wu 等人](https://ieeexplore.ieee.org/document/7498326)用普通 RNN 设计了一个基于会话的电商推荐系统，从用户的点击历史中预测下一个会购买的商品。为了减少计算开销，模型中只保留最新的有限个状态，更早的状态都折叠到一个单独的历史状态中。上面提到的两种推荐系统都没有考虑到外部信息。[Hidasi 等人](https://dl.acm.org/citation.cfm?id=2959167)提出了一种并行架构，用三个 GRU 学习用户id、图片和文本的特征向量。三个 GRU 的输出经过加权之后连接起来，用于预测当前会话的下一个产品。[Smirnova 等人](https://arxiv.org/pdf/1706.07684.pdf)在输入和输出层中插入上下文信息，提高推荐精度。
+- [Recurrent Recommender Network](http://alexbeutel.com/papers/rnn_wsdm2017.pdf): RRN 是一个在 RNN 基础上构建的非参数推荐模型。它可以建模产品的季节性变化和用户偏好随时间的变化。它用两个 LSTM 对动态的用户状态和产品状态进行建模。同时考虑到用户的长期兴趣和产品的固有属性，模型中还引入了用户和产品的静态隐式因子。[Wu 等人](https://openreview.net/pdf?id=Bkv9FyHYx)在 RRN 基础上对文本评论和评分进行建模。该模型希望用字符级别的 LSTM，通过用户和产品的隐状态生成评论。评论生成任务可以看作一个帮助加强评分预测的辅助任务。但是，这个模型无法生成可读的评论文本。
+- [Neural Survival Recommender](https://dl.acm.org/citation.cfm?id=3018719): 这项工作是一个多任务学习框架，意在预测用户和推荐产品的返回时间。作者用一个 LSTM 估计用户的返回时间，用另一个 LSTM 学习用户的历史会话动作。
+- [Attention based RNN](https://pdfs.semanticscholar.org/0087/d3ee3e66498483dbc9e799f2744f562a75b7.pdf): 这项工作用 LSTM + att 获取微博中的信息，还用 LDA 学习微博的主题分布。主题分布用来学习注意权重。
+
+### RNN + 传统
+
+- GRU Multitask Learning: [Bansal 等人](https://arxiv.org/pdf/1609.02116.pdf)用 GRU 将文本序列编码到隐因子模型中。作者用一个多任务规范项来防止过拟合，减少训练数据的稀疏性。主任务是评分预测，辅助任务是产品的元数据（标签、样式）预测。[Dai 等人](https://www.cc.gatech.edu/~lsong/papers/DaiWanTriSon16.pdf)提出一个隐式模型来获取用户和产品隐式特征的共同进化。用户和产品之间的相互作用会驱动用户偏好的产品特征的变化。为了对历史作用进行建模，作者提出用 RNN 自动学习用户和产品特征的趋势、进化和共同进化过程的影响。[Okura 等人](https://dl.acm.org/citation.cfm?id=3098108)提出用 GRU 学习用户的浏览历史，并用隐因子模型推荐新闻文章。相比于传统的基于词的方法，该推荐系统的精度有很大提升。
