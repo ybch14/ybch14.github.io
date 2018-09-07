@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-article-content h3 {
 	margin-top: 0;
 	margin-bottom: 0rem;
-	margin-left: 20px;
+	margin-left: 15px;
 	font-weight: normal;
 	color : #159957;
 }
@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-article-content dl{
-	margin-left: 20px;
+	margin-left: 15px;
     margin-bottom: 0rem;
     margin-top: 0em;
 }
