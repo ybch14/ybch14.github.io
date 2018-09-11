@@ -49,8 +49,10 @@ I'm a starting Ph.D. student at THU-NGNLAB, Dept. of E.E., Tsinghua University, 
     - Machine Learning basis
         - [LDA (Latent Dirichlet Allocation)](NLP_Machine_learning_basis/LDA.md)
         - CRF (Conditional Random Field)
+    - Named Entity Recognition
     - Relation Extraction
         - Fully Supervised Method
+            - [TreeLSTM](NLP_FSRE/TreeLSTM.md)
         - Distant Supervised Method
     - Sentiment Analysis
     - Knowledge Graph
