@@ -75,6 +75,7 @@
 - SemEval 上本文方法与其他方法对比
 
 |Settings|Marco-F1|
+|:-:|:-:|
 |SPTree|0.851|
 |SPSeq|0.844|
 |SPXu|0.847|
