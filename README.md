@@ -50,13 +50,13 @@ I'm a starting Ph.D. student at THU-NGNLAB, Dept. of E.E., Tsinghua University, 
         - [LDA (Latent Dirichlet Allocation)](NLP_Machine_learning_basis/LDA.md)
         - CRF (Conditional Random Field)
     - Named Entity Recognition
+        - [Semi-supervised sequence tagging with bidirectional language models](NLP_Named_Entity_Recognition/Semi_supervised_sequence_tagging_with_bidirectional_language_models.md)
     - Relation Extraction
         - Fully Supervised Method
             - [TreeLSTM](NLP_FSRE/TreeLSTM.md)
         - Distant Supervised Method
     - Sentiment Analysis
-    - Knowledge Graph
-        - Knowledge Graph Embedding
+    - Knowledge Graph Embedding
 - Recommender System 
     - [Deep Learning Methods Survey](RS_survey/survey.md)
 
@@ -67,5 +67,5 @@ I'm a starting Ph.D. student at THU-NGNLAB, Dept. of E.E., Tsinghua University, 
 
 ## Note
 
-- This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by ```mermaid``` ([Github](https://github.com/knsv/mermaid)). Great thanks to the author!
+- This page originally come from jekyll Cayman theme. All the other parts and color adjustments are written by myself with CSS and JS. Writing a static web page is tried but interesting :-) The network architecture is supported by ```mermaid``` ([GitHub](https://github.com/knsv/mermaid)). Great thanks to the author!
 - The side bar is under construction.

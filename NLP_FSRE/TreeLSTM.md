@@ -79,3 +79,7 @@
 |SPTree|0.851|
 |SPSeq|0.844|
 |SPXu|0.847|
+
+### 参考文献
+
+- Miwa, M., & Bansal, M. (2016). End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures, 1105–1116. https://doi.org/10.18653/v1/P16-1105
